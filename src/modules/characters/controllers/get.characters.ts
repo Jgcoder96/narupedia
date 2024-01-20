@@ -1,4 +1,4 @@
-import { getConnection } from '../../../database/connection';
+import { getConnection } from '../../../database/script/conecction/connection';
 import { Request, Response } from 'express';
 
 export const getCharacters = async (_req: Request, res: Response) => {

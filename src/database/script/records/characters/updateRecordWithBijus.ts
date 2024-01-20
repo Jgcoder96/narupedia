@@ -7,12 +7,11 @@ import { mapAndFindIndex } from './mapAndFindIndex';
 export const updateRecordWithBijus = (data: Bijus, record: Character[]) => {
   data.tailedBeasts.map((biju) => {
     mapAndFindIndex(record, biju.id, (search) => {
-      if (record[search].group !== undefined) {
-        record[search].group?.push('biju');
-      } else {
+      if (!record[search].group) {
         record[search].group = ['biju'];
+      } else {
+        record[search].group?.push('biju');
       }
-      record[search].jinchuriki = biju.personal.jinchūriki;
     });
   });
 };

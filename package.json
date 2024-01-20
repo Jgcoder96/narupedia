@@ -7,12 +7,9 @@
     "dev": "ts-node-dev ./src/index.ts",
     "tsc": "tsc",
     "lint": "eslint \"*/**/.{js,ts,tsx}\" --quiet --fix",
-    "characters": "ts-node-dev ./src/modules/characters/helpers/record/recordData.ts",
-    "clans": "ts-node-dev ./src/modules/clans/helpers/record/recordData.ts",
-    "villages": "ts-node-dev ./src/modules/villages/helpers/record/recordData.ts",
-    "kekkeigenkai": "ts-node-dev ./src/modules/kekkeigenkai/helpers/record/recordData.ts",
-    "bijus": "ts-node-dev ./src/database/queries/add.bijus.ts",
-    "akatsukis": "ts-node-dev ./src/database/queries/add.akatsukis.ts"
+    "character": "ts-node-dev ./src/database/script/records/characters/recordDataCharacters.ts",
+    "insertData": "ts-node-dev ./src/database/script/queries/insertInfoInDatabase.ts",
+    "verificar": "ts-node-dev ./src/database/script/queries/queryKekkeigenkaiXCharacter.ts"
   },
   "keywords": [],
   "author": "",

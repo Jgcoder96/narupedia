@@ -3,7 +3,7 @@ import { request } from '../../../../services/narutodb/request';
 import { Clan } from './recordDataTypes';
 
 /* function recordData */
-export const recordData = async () => {
+export const recordDataClans = async () => {
   const dataClans = await request.getClans();
   const record: Clan[] = [];
 
@@ -14,9 +14,11 @@ export const recordData = async () => {
       clan.name = element.name;
       record.push(clan);
     });
+    const clan: Clan = {};
+    clan.id = record.length;
+    clan.name = "'unknown'";
+    record.push(clan);
   }
-  console.log(record);
+  return record;
 };
 /* end function recordData */
-
-recordData();

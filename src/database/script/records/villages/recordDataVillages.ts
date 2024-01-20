@@ -3,7 +3,7 @@ import { request } from '../../../../services/narutodb/request';
 import { Village } from './recordDataTypes';
 
 /* function recordData */
-export const recordData = async () => {
+export const recordDataVillages = async () => {
   const dataVillages = await request.getVillages();
   const record: Village[] = [];
 
@@ -14,9 +14,11 @@ export const recordData = async () => {
       village.name = element.name;
       record.push(village);
     });
+    const village: Village = {};
+    village.id = record.length;
+    village.name = 'unknown';
+    record.push(village);
   }
-  console.log(record);
+  return record;
 };
 /* end function recordData */
-
-recordData();

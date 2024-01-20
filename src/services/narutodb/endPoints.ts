@@ -17,3 +17,5 @@ type EndPoint = {
   villages: string;
   kekkeigenkai: string;
 };
+
+/* sakura haruno */

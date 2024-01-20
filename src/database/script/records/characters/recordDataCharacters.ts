@@ -9,7 +9,7 @@ import { updateRecordWithAkatsuki } from './updateRecordWithAkatsuki';
 import { updateRecordWithBijus } from './updateRecordWithBijus';
 
 /* function recordCharacters */
-export const recordData = async () => {
+export const recordDataCharacters = async () => {
   /* request */
   const dataCharacters = await request.getCharacters();
   const dataVillages = await request.getVillages();
@@ -38,9 +38,9 @@ export const recordData = async () => {
     updateRecordWithBijus(dataBijus, record);
   }
   /* end conditional */
-
-  console.log(record[1127]);
+  return record;
 };
+
 /* end function recordCharacters */
 
-recordData();
+recordDataCharacters();

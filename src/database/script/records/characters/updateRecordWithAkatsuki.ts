@@ -10,7 +10,11 @@ export const updateRecordWithAkatsuki = (
 ) => {
   data.akatsuki.map((akatsuki) => {
     mapAndFindIndex(record, akatsuki.id, (search) => {
-      record[search].group = ['akatsuki'];
+      if (!record[search].group) {
+        record[search].group = ['akatsuki'];
+      } else {
+        record[search].group?.push('akatsuki');
+      }
     });
   });
 };
