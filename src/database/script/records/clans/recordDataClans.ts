@@ -1,6 +1,7 @@
 /* import modules */
 import { request } from '../../../../services/narutodb/request';
 import { Clan } from './recordDataTypes';
+/*  */
 
 /* function recordData */
 export const recordDataClans = async () => {
@@ -21,4 +22,4 @@ export const recordDataClans = async () => {
   }
   return record;
 };
-/* end function recordData */
+/*  */

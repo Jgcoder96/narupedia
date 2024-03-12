@@ -1,7 +1,10 @@
-/* import modules */
+/* import libreries */
 import axios from 'axios';
+/*  */
+/* import modules */
 import { Akatsukis } from './getAkatsukiTypes';
 import { endPoint } from '../endPoints';
+/*  */
 
 /* function getAkatzukis */
 export const getAkatzukis = async () => {
@@ -13,4 +16,4 @@ export const getAkatzukis = async () => {
     console.log(error);
   }
 };
-/* end function getAkatzukis */
+/*  */

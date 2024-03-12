@@ -1,6 +1,11 @@
-import { getConnection } from '../../../database/script/conecction/connection';
+/* import libreries */
 import { Request, Response } from 'express';
+/*  */
+/* import modules */
+import { getConnection } from '../../../database/script/connection/connection';
+/*  */
 
+/* function getCharacters */
 export const getCharacters = async (_req: Request, res: Response) => {
   try {
     const connection = await getConnection();
@@ -13,3 +18,4 @@ export const getCharacters = async (_req: Request, res: Response) => {
     return res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+/*  */

@@ -1,5 +1,9 @@
+/* import libreries */
 import express from 'express';
+/*  */
+/* import modules */
 import { router } from '../modules/characters/routes/routes';
+/*  */
 
 export const app = express();
 

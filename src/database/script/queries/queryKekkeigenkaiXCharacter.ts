@@ -1,6 +1,8 @@
+/* import modules */
 import { recordDataCharacters } from '../records/characters/recordDataCharacters';
 import { recordDataKekkeigenkai } from '../records/kekkeigenkai/recordDataKekkeigenkai';
 
+/* function queryKekkeigenkaiXCharacter */
 export const queryKekkeigenkaiXCharacter = async () => {
   const dataCharacters = await recordDataCharacters();
   const dataKekkeigenkai = await recordDataKekkeigenkai();
@@ -22,6 +24,7 @@ export const queryKekkeigenkaiXCharacter = async () => {
     });
     query = query.slice(0, -1) + ';';
   }
+  console.log('query to kekkeigenkai x character created successful');
   return query;
 };
-queryKekkeigenkaiXCharacter();
+/*  */

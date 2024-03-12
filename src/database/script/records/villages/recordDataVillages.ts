@@ -1,6 +1,7 @@
 /* import modules */
 import { request } from '../../../../services/narutodb/request';
 import { Village } from './recordDataTypes';
+/*  */
 
 /* function recordData */
 export const recordDataVillages = async () => {
@@ -21,4 +22,4 @@ export const recordDataVillages = async () => {
   }
   return record;
 };
-/* end function recordData */
+/*  */

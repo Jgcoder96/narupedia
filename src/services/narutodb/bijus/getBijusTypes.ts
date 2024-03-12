@@ -5,6 +5,7 @@ export interface Bijus {
   pageSize: number;
   totalTailedBeasts: number;
 }
+/*  */
 
 /* interface TailedBeast */
 export interface TailedBeast {
@@ -20,6 +21,7 @@ export interface TailedBeast {
   voiceActors?: VoiceActors;
   tools?: string[];
 }
+/*  */
 
 /* interface Debut */
 export interface Debut {
@@ -31,20 +33,24 @@ export interface Debut {
   ova?: string;
   appearsIn: AppearsIn;
 }
+/*  */
 
 /* type AppearsIn */
 export type AppearsIn = 'Anime, Manga, Novel, Game, Movie';
+/*  */
 
 /* type Movie */
 export type Movie =
   | 'The Last: Naruto the Movie'
   | 'Naruto the Movie: Blood Prison'
   | 'Naruto the Movie: Ninja Clash in the Land of Snow';
+/*  */
 
 /* type Novel */
 export type Novel =
   | 'The Last: Naruto the Movie'
   | 'Naruto: Innocent Heart, Demonic Blood';
+/*  */
 
 /* interface Family */
 export interface Family {
@@ -53,6 +59,7 @@ export interface Family {
   creator?: string;
   sibling?: string;
 }
+/*  */
 
 /* interface Personal */
 export interface Personal {
@@ -64,12 +71,14 @@ export interface Personal {
   species?: string;
   affiliation?: string[] | string;
 }
+/*  */
 
 /* interface VoiceActors */
 export interface VoiceActors {
   japanese: string;
   english: string[] | string;
 }
+/*  */
 
 // Converts JSON strings to/from your types
 export class Convert {
@@ -81,3 +90,4 @@ export class Convert {
     return JSON.stringify(value);
   }
 }
+/*  */

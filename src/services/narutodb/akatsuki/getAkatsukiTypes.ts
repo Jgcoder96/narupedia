@@ -5,6 +5,7 @@ export interface Akatsukis {
   pageSize: number;
   totalMembers: number;
 }
+/*  */
 
 /* interface Akatsuki */
 export interface Akatsuki {
@@ -22,6 +23,7 @@ export interface Akatsuki {
   rank?: Rank;
   香燐Karin?: 香燐Karin;
 }
+/*  */
 
 /* interface Debut */
 export interface Debut {
@@ -33,12 +35,14 @@ export interface Debut {
   ova?: Ova;
   appearsIn: string;
 }
+/*  */
 
 /* type Ova */
 export type Ova =
   | 'Naruto Shippūden: UNSG anime cutscenes'
   | 'Hidden Leaf Village Grand Sports Festival!'
   | 'Naruto x UT';
+/*  */
 
 /* interface Family */
 export interface Family {
@@ -54,6 +58,7 @@ export interface Family {
   'adoptive brother'?: string;
   'mother '?: string;
 }
+/*  */
 
 /* interface Personal */
 export interface Personal {
@@ -75,6 +80,7 @@ export interface Personal {
   clan?: string;
   titles?: string[];
 }
+/*  */
 
 /* interface Age */
 export interface Age {
@@ -83,6 +89,7 @@ export interface Age {
   'Academy Graduate'?: string;
   'Chunin Promotion'?: string;
 }
+/*  */
 
 /* interface Height */
 export interface Height {
@@ -90,33 +97,40 @@ export interface Height {
   'Part I'?: string;
   Gaiden?: string;
 }
+/*  */
 
 /* type Sex */
 export type Sex = 'Male' | 'Female';
+/*  */
 
 /* type Status */
 export type Status = 'Incapacitated' | 'Deceased';
+/*  */
 
 /* interface Weight */
 export interface Weight {
   'Part II'?: string;
   'Part I'?: string;
 }
+/*  */
 
 /* interface Rank */
 export interface Rank {
   ninjaRegistration?: string;
   ninjaRank?: Weight;
 }
+/*  */
 
 /* interface VoiceActors */
 export interface VoiceActors {
   japanese: string[] | string;
   english: string[] | string;
 }
+/*  */
 
 /* interface 香燐Karin */
 export interface 香燐Karin {}
+/*  */
 
 // Converts JSON strings to/from your types
 export class Convert {
@@ -128,3 +142,4 @@ export class Convert {
     return JSON.stringify(value);
   }
 }
+/*  */

@@ -5,6 +5,7 @@ export interface Kekkeigenkai {
   pageSize: number;
   totalKekkeiGenkai: number;
 }
+/*  */
 
 /* interface KekkeigenkaiElement */
 export interface KekkeigenkaiElement {
@@ -12,6 +13,7 @@ export interface KekkeigenkaiElement {
   name: string;
   characters: Character[];
 }
+/*  */
 
 /* interface Character */
 export interface Character {
@@ -32,6 +34,7 @@ export interface Character {
   三代目風影SandaimeKazekage?: 三代目風影_SandaimeKazekage;
   十尾Jūbi?: 三代目風影_SandaimeKazekage;
 }
+/*  */
 
 /* interface Debut */
 export interface Debut {
@@ -43,6 +46,7 @@ export interface Debut {
   movie?: string;
   ova?: string;
 }
+/*  */
 
 /* interface Personal */
 export interface Personal {
@@ -67,6 +71,7 @@ export interface Personal {
   kekkeiMōra?: string;
   kekkeiTōta?: string;
 }
+/*  */
 
 /* interface Age */
 export interface Age {
@@ -79,27 +84,33 @@ export interface Age {
   'Boruto Manga'?: string;
   Gaiden?: string;
 }
+/*  */
 
 /* type BloodType */
 export type BloodType = 'B' | 'AB' | 'A' | 'O';
+/*  */
 
 /* type Sex */
 export type Sex = 'Male' | 'Female' | 'File:Gender Various.svg Various';
+/*  */
 
 /* type Status */
 export type Status = 'Deceased' | 'Incapacitated';
+/*  */
 
 /* interface Weight */
 export interface Weight {
   'Part II'?: string;
   'Part I'?: string;
 }
+/*  */
 
 /* interface Rank */
 export interface Rank {
   ninjaRank?: Age;
   ninjaRegistration?: string;
 }
+/*  */
 
 /* type UniqueTrait */
 export type UniqueTrait =
@@ -109,15 +120,18 @@ export type UniqueTrait =
   | 'Manipulates sand'
   | 'Influences its sleeping jinchūriki'
   | 'Natural cursed seal markings';
+/*  */
 
 /* interface VoiceActors */
 export interface VoiceActors {
   japanese?: string[] | string;
   english?: string[] | string;
 }
+/*  */
 
 /* interface 三代目風影_SandaimeKazekage */
 export interface 三代目風影_SandaimeKazekage {}
+/*  */
 
 // Converts JSON strings to/from your types
 export class Convert {
@@ -129,3 +143,4 @@ export class Convert {
     return JSON.stringify(value);
   }
 }
+/*  */

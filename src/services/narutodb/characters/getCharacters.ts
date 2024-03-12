@@ -1,7 +1,10 @@
-/* import modules */
+/* import libreries */
 import axios from 'axios';
+/*  */
+/* import modules */
 import { Characters } from './getCharactersTypes';
 import { endPoint } from '../endPoints';
+/*  */
 
 /* function getCharacters */
 export const getCharacters = async () => {
@@ -13,4 +16,4 @@ export const getCharacters = async () => {
     console.log(error);
   }
 };
-/* end function getCharacters */
+/*  */

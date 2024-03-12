@@ -1,6 +1,8 @@
+/* import modules */
 import { recordDataCharacters } from '../records/characters/recordDataCharacters';
 import { recordDataClans } from '../records/clans/recordDataClans';
 
+/* function queryClanXCharacter */
 export const queryClanXCharacter = async () => {
   const dataCharacters = await recordDataCharacters();
   const dataClans = await recordDataClans();
@@ -22,6 +24,7 @@ export const queryClanXCharacter = async () => {
     });
     query = query.slice(0, -1) + ';';
   }
+  console.log('query to clan x character created successful');
   return query;
 };
-queryClanXCharacter();
+/*  */

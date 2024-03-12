@@ -5,8 +5,9 @@ import { getClans } from './clans/getClans';
 import { getKekkeigenkai } from './kekkeigenkai/getKekkeigenkai';
 import { getAkatzukis } from './akatsuki/getAkatsuki';
 import { getBijus } from './bijus/getBijus';
+/*  */
 
-/* object request */
+/* request object */
 export const request = {
   getCharacters,
   getVillages,
@@ -15,3 +16,4 @@ export const request = {
   getAkatzukis,
   getBijus,
 };
+/*  */

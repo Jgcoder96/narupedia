@@ -7,21 +7,24 @@ import { updateRecordWithVillages } from './updateRecordWithVillages';
 import { updateRecordWithKekkeigenkai } from './updateRecordWithKekkeigenkai';
 import { updateRecordWithAkatsuki } from './updateRecordWithAkatsuki';
 import { updateRecordWithBijus } from './updateRecordWithBijus';
+/*  */
 
-/* function recordCharacters */
+/* function recordDataCharacters */
 export const recordDataCharacters = async () => {
   /* request */
-  const dataCharacters = await request.getCharacters();
-  const dataVillages = await request.getVillages();
-  const dataClans = await request.getClans();
-  const datakekkeigenkai = await request.getKekkeigenkai();
-  const dataAkatsukis = await request.getAkatzukis();
-  const dataBijus = await request.getBijus();
+  const dataCharacters = await request.getCharacters(),
+    dataVillages = await request.getVillages(),
+    dataClans = await request.getClans(),
+    datakekkeigenkai = await request.getKekkeigenkai(),
+    dataAkatsukis = await request.getAkatzukis(),
+    dataBijus = await request.getBijus();
+  /*  */
 
-  /* record characters */
+  /* record character */
   const record: Character[] = [];
+  /*  */
 
-  /* conditional */
+  /* update record */
   if (
     dataCharacters &&
     dataClans &&
@@ -37,10 +40,7 @@ export const recordDataCharacters = async () => {
     updateRecordWithAkatsuki(dataAkatsukis, record);
     updateRecordWithBijus(dataBijus, record);
   }
-  /* end conditional */
+  /*  */
   return record;
 };
-
-/* end function recordCharacters */
-
-recordDataCharacters();
+/*  */

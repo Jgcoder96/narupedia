@@ -1,6 +1,7 @@
 /* import modules */
 import { request } from '../../../../services/narutodb/request';
 import { Kekkeigenkai } from './recordDataTypes';
+/*  */
 
 /* function recordData */
 export const recordDataKekkeigenkai = async () => {
@@ -21,4 +22,4 @@ export const recordDataKekkeigenkai = async () => {
   }
   return record;
 };
-/* end function recordData */
+/*  */

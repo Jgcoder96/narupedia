@@ -1,6 +1,7 @@
 /* import modules */
 import { Characters } from '../../../../services/narutodb/characters/getCharactersTypes';
 import { Character } from './recordDataTypes';
+/*  */
 
 /* function updateRecordWithCharacters */
 export const updateRecordWithCharacters = (
@@ -15,4 +16,4 @@ export const updateRecordWithCharacters = (
     record.push(character);
   });
 };
-/* end function updateRecordWithCharacters */
+/*  */

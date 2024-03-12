@@ -5,6 +5,7 @@ export interface Villages {
   pageSize: number;
   totalVillages: number;
 }
+/*  */
 
 /* interface Village */
 export interface Village {
@@ -12,6 +13,7 @@ export interface Village {
   name: string;
   characters: Character[];
 }
+/*  */
 
 /* interface Character */
 export interface Character {
@@ -41,6 +43,7 @@ export interface Character {
   香燐Karin?: 冥頭_Meizu;
   餓鬼道Gakidō?: 冥頭_Meizu;
 }
+/*  */
 
 /* interface Debut */
 export interface Debut {
@@ -52,6 +55,7 @@ export interface Debut {
   novel?: string;
   movie?: string;
 }
+/*  */
 
 /* type AppearsIn */
 export type AppearsIn =
@@ -77,6 +81,7 @@ export type AppearsIn =
   | 'Anime, Game, Movie'
   | 'Manga, Movie'
   | 'Novel, Game, Movie';
+/*  */
 
 /* interface Personal */
 export interface Personal {
@@ -101,6 +106,7 @@ export interface Personal {
   jinchūriki?: string[];
   kekkeiMōra?: string;
 }
+/*  */
 
 /* interface Age */
 export interface Age {
@@ -113,9 +119,11 @@ export interface Age {
   'Boruto Movie'?: string;
   'Blank Period'?: string;
 }
+/*  */
 
 /* type BloodType */
 export type BloodType = 'A' | 'O' | 'AB' | 'B';
+/*  */
 
 /* type ClassificationElement */
 export type ClassificationElement =
@@ -133,6 +141,7 @@ export type ClassificationElement =
   | 'S-rank'
   | 'Daimyō'
   | 'Sannin';
+/*  */
 
 /* type Sex */
 export type Sex =
@@ -140,21 +149,25 @@ export type Sex =
   | 'Male'
   | 'File:Gender Other.svg Other'
   | 'File:Gender Various.svg Various';
+/*  */
 
 /* type Status */
 export type Status = 'Deceased' | 'Presumed Deceased' | 'Incapacitated';
+/*  */
 
 /* interface Weight */
 export interface Weight {
   'Part I'?: string;
   'Part II'?: string;
 }
+/*  */
 
 /* interface RankClass */
 export interface RankClass {
   ninjaRank?: Age;
   ninjaRegistration?: string;
 }
+/*  */
 
 /* interface VoiceActors */
 export interface VoiceActors {
@@ -164,6 +177,7 @@ export interface VoiceActors {
 
 /* interface 冥頭_Meizu */
 export interface 冥頭_Meizu {}
+/*  */
 
 // Converts JSON strings to/from your types
 export class Convert {
@@ -175,3 +189,4 @@ export class Convert {
     return JSON.stringify(value);
   }
 }
+/*  */

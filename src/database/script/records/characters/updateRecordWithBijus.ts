@@ -2,6 +2,7 @@
 import { Bijus } from '../../../../services/narutodb/bijus/getBijusTypes';
 import { Character } from './recordDataTypes';
 import { mapAndFindIndex } from './mapAndFindIndex';
+/*  */
 
 /* function updateRecordWithBijus */
 export const updateRecordWithBijus = (data: Bijus, record: Character[]) => {
@@ -15,4 +16,4 @@ export const updateRecordWithBijus = (data: Bijus, record: Character[]) => {
     });
   });
 };
-/* end function updateRecordWithBijus */
+/*  */

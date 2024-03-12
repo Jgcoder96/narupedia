@@ -1,6 +1,8 @@
+/* import modules */
 import { recordDataCharacters } from '../records/characters/recordDataCharacters';
 import { recordDataVillages } from '../records/villages/recordDataVillages';
 
+/* function queryVillageXCharacter */
 export const queryVillageXCharacter = async () => {
   const dataCharacters = await recordDataCharacters();
   const dataVillages = await recordDataVillages();
@@ -22,6 +24,7 @@ export const queryVillageXCharacter = async () => {
     });
     query = query.slice(0, -1) + ';';
   }
+  console.log('village x character created successful');
   return query;
 };
-queryVillageXCharacter();
+/*  */

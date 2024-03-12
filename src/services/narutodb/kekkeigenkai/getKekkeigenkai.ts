@@ -1,7 +1,10 @@
-/* import modules */
+/* import libreries */
 import axios from 'axios';
+/*  */
+/* import modules */
 import { Kekkeigenkai } from './getKekkeigenkaiTypes';
 import { endPoint } from '../endPoints';
+/*  */
 
 /* function getKekkeigenkai */
 export const getKekkeigenkai = async () => {
@@ -13,4 +16,4 @@ export const getKekkeigenkai = async () => {
     console.log(error);
   }
 };
-/* end function getKekkeigenkai */
+/*  */

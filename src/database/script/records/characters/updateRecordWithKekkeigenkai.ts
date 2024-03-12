@@ -2,6 +2,7 @@
 import { Kekkeigenkai } from '../../../../services/narutodb/kekkeigenkai/getKekkeigenkaiTypes';
 import { Character } from './recordDataTypes';
 import { mapAndFindIndex } from './mapAndFindIndex';
+/*  */
 
 /* function updateRecordWithKekkeigenkai */
 export const updateRecordWithKekkeigenkai = (
@@ -28,4 +29,4 @@ export const updateRecordWithKekkeigenkai = (
     });
   });
 };
-/* end function updateRecordWithKekkeigenkai */
+/*  */

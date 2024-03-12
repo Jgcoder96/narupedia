@@ -1,5 +1,7 @@
+/* import modules */
 import { recordDataKekkeigenkai } from '../records/kekkeigenkai/recordDataKekkeigenkai';
 
+/* function queryClans */
 export const queryKekkeigenkai = async () => {
   const data = await recordDataKekkeigenkai();
   let query =
@@ -14,7 +16,7 @@ export const queryKekkeigenkai = async () => {
     });
     query = query.slice(0, -1) + ';';
   }
+  console.log('query to kekkeigenkai created successful');
   return query;
 };
-
-queryKekkeigenkai();
+/*  */

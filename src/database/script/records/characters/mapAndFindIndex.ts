@@ -1,5 +1,6 @@
 /* import modules */
 import { Character } from './recordDataTypes';
+/*  */
 
 /* function mapAndFindIndex */
 export const mapAndFindIndex = (
@@ -10,4 +11,4 @@ export const mapAndFindIndex = (
   const search = array.findIndex((value) => value.id === id);
   if (search !== -1) callback(search);
 };
-/* end function mapAndFindIndex */
+/*  */

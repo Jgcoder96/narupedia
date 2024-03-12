@@ -2,6 +2,7 @@
 import { Villages } from '../../../../services/narutodb/villages/getVillagesTypes';
 import { Character } from './recordDataTypes';
 import { mapAndFindIndex } from './mapAndFindIndex';
+/*  */
 
 /* function updateRecordWithVillages */
 export const updateRecordWithVillages = (
@@ -28,5 +29,4 @@ export const updateRecordWithVillages = (
     });
   });
 };
-
-/* end function updateRecordWithVillages */
+/*  */

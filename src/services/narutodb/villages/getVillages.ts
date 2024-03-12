@@ -1,5 +1,6 @@
-/* import modules */
+/* import libreries */
 import axios from 'axios';
+/* import modules */
 import { Villages } from './getVillagesTypes';
 import { endPoint } from '../endPoints';
 
@@ -13,4 +14,4 @@ export const getVillages = async () => {
     console.log(error);
   }
 };
-/* end function getVillages */
+/*  */

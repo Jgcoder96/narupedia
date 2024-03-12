@@ -2,6 +2,7 @@
 import { Akatsukis } from '../../../../services/narutodb/akatsuki/getAkatsukiTypes';
 import { Character } from './recordDataTypes';
 import { mapAndFindIndex } from './mapAndFindIndex';
+/*  */
 
 /* function updateRecordWithAkatsuki */
 export const updateRecordWithAkatsuki = (
@@ -18,4 +19,4 @@ export const updateRecordWithAkatsuki = (
     });
   });
 };
-/* end function updateRecordWithAkatsuki */
+/*  */

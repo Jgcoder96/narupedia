@@ -1,5 +1,7 @@
+/* import modules */
 import { recordDataCharacters } from '../records/characters/recordDataCharacters';
 
+/* function queryCharacters */
 export const queryCharacters = async () => {
   const dataCharacters = await recordDataCharacters();
   let query = 'INSERT INTO characters (character_id, name, image) VALUES ';
@@ -14,7 +16,7 @@ export const queryCharacters = async () => {
     });
     query = query.slice(0, -1) + ';';
   }
+  console.log('query to characters created successful');
   return query;
 };
-
-queryCharacters();
+/*  */

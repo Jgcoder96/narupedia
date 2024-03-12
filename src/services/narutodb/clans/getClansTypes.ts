@@ -5,6 +5,7 @@ export interface Clans {
   pageSize: number;
   totalClans: number;
 }
+/*  */
 
 /* interface Clan */
 export interface Clan {
@@ -12,6 +13,7 @@ export interface Clan {
   name: string;
   characters: Character[];
 }
+/*  */
 
 /* interface Character */
 export interface Character {
@@ -34,6 +36,7 @@ export interface Character {
   死韻Shiin?: 加流羅_Karura;
   香燐Karin?: 加流羅_Karura;
 }
+/*  */
 
 /* interface Debut */
 export interface Debut {
@@ -45,6 +48,7 @@ export interface Debut {
   game?: string;
   ova?: string;
 }
+/*  */
 
 /* interface Personal */
 export interface Personal {
@@ -68,6 +72,7 @@ export interface Personal {
   tailedBeast?: string;
   kekkeiMōra?: string[] | string;
 }
+/*  */
 
 /* interface Age */
 export interface Age {
@@ -79,9 +84,11 @@ export interface Age {
   Gaiden?: string;
   'Blank Period'?: string;
 }
+/*  */
 
 /* type BloodType */
 export type BloodType = 'A' | 'AB' | 'O' | 'B';
+/*  */
 
 /* interface Height */
 export interface Height {
@@ -92,39 +99,47 @@ export interface Height {
   'Boruto Movie'?: string;
   'Boruto Manga'?: string;
 }
+/*  */
 
 /* type Sex */
 export type Sex = 'Female' | 'Male';
+/*  */
 
 /* type Species */
 export type Species =
   | 'Ninken'
   | 'Celestial Being-Human hybrid'
   | 'Celestial Being';
+/*  */
 
 /* type Status */
 export type Status = 'Deceased' | 'Presumed Deceased' | 'Incapacitated';
+/*  */
 
 /* interface Weight */
 export interface Weight {
   'Part I'?: string;
   'Part II'?: string;
 }
+/*  */
 
 /* interface Rank */
 export interface Rank {
   ninjaRank?: Height;
   ninjaRegistration?: string;
 }
+/*  */
 
 /* interface VoiceActors */
 export interface VoiceActors {
   japanese?: string[] | string;
   english?: string[] | string;
 }
+/*  */
 
 /* interface 加流羅_Karura */
 export interface 加流羅_Karura {}
+/*  */
 
 // Converts JSON strings to/from your types
 export class Convert {
@@ -136,3 +151,4 @@ export class Convert {
     return JSON.stringify(value);
   }
 }
+/*  */

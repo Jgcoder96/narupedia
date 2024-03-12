@@ -2,6 +2,7 @@
 import { Clans } from '../../../../services/narutodb/clans/getClansTypes';
 import { Character } from './recordDataTypes';
 import { mapAndFindIndex } from './mapAndFindIndex';
+/*  */
 
 /* function updateRecordWithClans */
 export const updateRecordWithClans = (data: Clans, record: Character[]) => {
@@ -25,4 +26,4 @@ export const updateRecordWithClans = (data: Clans, record: Character[]) => {
     });
   });
 };
-/* end function updateRecordWithClans */
+/*  */
