@@ -17,7 +17,7 @@ export const recordDataClans = async () => {
     });
     const clan: Clan = {};
     clan.id = record.length;
-    clan.name = "'unknown'";
+    clan.name = 'unknown';
     record.push(clan);
   }
   return record;

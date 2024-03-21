@@ -1,9 +1,11 @@
 /* import modules */
-import { getCharacters } from './get.characters';
+import { getCharacters } from './getCharacters';
+import { getCharacter } from './getCharacter';
 /*  */
 
 /* methods object */
 export const methods = {
+  getCharacter,
   getCharacters,
 };
 /*  */

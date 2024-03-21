@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { methods } from '../controllers/methods';
 
-export const router = Router();
+export const routerCharacters = Router();
 
-router.get('/', methods.getCharacters);
+routerCharacters.get('/', methods.getCharacters);
+routerCharacters.get('/:id', methods.getCharacter);

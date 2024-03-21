@@ -2,7 +2,10 @@
 import express from 'express';
 /*  */
 /* import modules */
-import { router } from '../modules/characters/routes/routes';
+import { routerCharacters } from '../modules/characters/routes/routes';
+import { routerClans } from '../modules/clans/routes/routes';
+import { routerKekkeigenkai } from '../modules/kekkeigenkai/routes/routes';
+import { routerVillages } from '../modules/villages/routes/routes';
 /*  */
 
 export const app = express();
@@ -14,4 +17,7 @@ app.set('port', 4000);
 app.use(express.json());
 
 // routes
-app.use('/api/characters', router);
+app.use('/api/villages', routerVillages);
+app.use('/api/clans', routerClans);
+app.use('/api/kekkeigenkai', routerKekkeigenkai);
+app.use('/api/characters', routerCharacters);

@@ -5,14 +5,12 @@ import { Request, Response } from 'express';
 import { getConnection } from '../../../database/script/connection/connection';
 /*  */
 
-/* function getCharacters */
-export const getCharacters = async (_req: Request, res: Response) => {
+/* function getkekkeigenkai */
+export const getKekkeigenkais = async (_req: Request, res: Response) => {
   try {
     const connection = await getConnection();
-    const result = await connection.query(
-      'SELECT usuario_id, nombre, apellidos, correo, edad FROM usuarios;',
-    );
-    return res.json(result);
+    const result = await connection.query('SELECT * FROM kekkeigenkais;');
+    return res.json(result[0]);
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: 'Internal Server Error' });
