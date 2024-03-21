@@ -2,7 +2,6 @@
 import { Request, Response } from 'express';
 /*  */
 /* import modules */
-/* import { getConnection } from '../../../database/script/connection/connection'; */
 import { pool } from '../../../database/script/connection/pool';
 import { poolPromise } from '../../../database/script/connection/poolPromise';
 /*  */
@@ -24,11 +23,6 @@ export const getVillage = async (req: Request, res: Response) => {
       element['clans'] = JSON.parse(element['clans']);
       element['kekkeigenkais'] = JSON.parse(element['kekkeigenkais']);
     });
-    /* const connection = await getConnection();
-    const villaje_id = req.params.id;
-    const result = await connection.query(
-      `SELECT * FROM villages WHERE village_id=${villaje_id};`,
-    ); */
     return res.json({
       village_id: result[0][0][0]['village_id'],
       name: result[0][0][0]['village'],
