@@ -1,5 +1,5 @@
 /* import modules */
-import { Kekkeigenkai } from '../../../../services/narutodb/kekkeigenkai/getKekkeigenkaiTypes';
+import { Kekkeigenkai } from '../../../../services/kekkeigenkai/getKekkeigenkaiTypes';
 import { Character } from './recordDataTypes';
 import { mapAndFindIndex } from './mapAndFindIndex';
 /*  */

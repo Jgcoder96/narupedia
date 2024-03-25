@@ -1,5 +1,5 @@
 /* import modules */
-import { Akatsukis } from '../../../../services/narutodb/akatsuki/getAkatsukiTypes';
+import { Akatsukis } from '../../../../services/akatsuki/getAkatsukiTypes';
 import { Character } from './recordDataTypes';
 import { mapAndFindIndex } from './mapAndFindIndex';
 /*  */

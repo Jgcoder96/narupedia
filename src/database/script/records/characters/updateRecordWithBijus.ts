@@ -1,5 +1,5 @@
 /* import modules */
-import { Bijus } from '../../../../services/narutodb/bijus/getBijusTypes';
+import { Bijus } from '../../../../services/bijus/getBijusTypes';
 import { Character } from './recordDataTypes';
 import { mapAndFindIndex } from './mapAndFindIndex';
 /*  */

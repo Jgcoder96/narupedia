@@ -1,5 +1,5 @@
 /* import modules */
-import { Clans } from '../../../../services/narutodb/clans/getClansTypes';
+import { Clans } from '../../../../services/clans/getClansTypes';
 import { Character } from './recordDataTypes';
 import { mapAndFindIndex } from './mapAndFindIndex';
 /*  */

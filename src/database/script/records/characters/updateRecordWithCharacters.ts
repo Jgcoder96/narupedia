@@ -1,5 +1,5 @@
 /* import modules */
-import { Characters } from '../../../../services/narutodb/characters/getCharactersTypes';
+import { Characters } from '../../../../services/characters/getCharactersTypes';
 import { Character } from './recordDataTypes';
 /*  */
 

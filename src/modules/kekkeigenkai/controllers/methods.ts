@@ -1,5 +1,5 @@
 /* import modules */
-import { getKekkeigenkais } from './getKekkeigenkais';
+import { getKekkeigenkais } from './getAllKekkeigenkai';
 import { getKekkeigenkai } from './getKekkeigenkai';
 /*  */
 

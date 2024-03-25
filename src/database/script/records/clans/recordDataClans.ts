@@ -1,5 +1,5 @@
 /* import modules */
-import { request } from '../../../../services/narutodb/request';
+import { request } from '../../../../services/request';
 import { Clan } from './recordDataTypes';
 /*  */
 

@@ -1,5 +1,5 @@
 /* import modules */
-import { Villages } from '../../../../services/narutodb/villages/getVillagesTypes';
+import { Villages } from '../../../../services/villages/getVillagesTypes';
 import { Character } from './recordDataTypes';
 import { mapAndFindIndex } from './mapAndFindIndex';
 /*  */

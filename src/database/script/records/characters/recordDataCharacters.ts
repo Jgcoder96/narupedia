@@ -1,5 +1,5 @@
 /* import modules */
-import { request } from '../../../../services/narutodb/request';
+import { request } from '../../../../services/request';
 import { Character } from './recordDataTypes';
 import { updateRecordWithCharacters } from './updateRecordWithCharacters';
 import { updateRecordWithClans } from './updateRecordWithClans';
