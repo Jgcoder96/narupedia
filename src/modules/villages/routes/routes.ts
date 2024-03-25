@@ -6,7 +6,7 @@ import { methods } from '../controllers/methods.controllers';
 import { schemaValidator } from '../../../middlewares/schemaValidator.middleware';
 import { postVillageSchema } from '../schema/postVillage.schema';
 import { putVillageSchema } from '../schema/putVillage.schema';
-import { deleteVillageSchema } from '../schema/delete.schema';
+import { deleteVillageSchema } from '../schema/deleteVillage.schema';
 /*  */
 
 /* router */

@@ -1,9 +1,8 @@
-import { findVillageById } from '../models/findVillageById.model';
-import { findVillageByLikeId } from '../models/findVillageByLikeId.models';
+import { methods } from '../models/methods.model';
 
 export const readVillage = async (id: number) => {
-  const existingVillage = await findVillageById(id),
-    existingCharacter = await findVillageByLikeId(id);
+  const existingVillage = await methods.findVillageById(id),
+    existingCharacter = await methods.findVillageByLikeId(id);
   if (existingVillage[0].length > 0 && existingCharacter[0].length > 0) {
     return {
       exists: true,
@@ -13,6 +12,4 @@ export const readVillage = async (id: number) => {
   } else {
     return { exists: false };
   }
-  /* if (existingVillage && existingCharacter) {
-  } */
 };

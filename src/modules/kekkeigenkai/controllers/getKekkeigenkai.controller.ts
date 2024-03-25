@@ -7,10 +7,10 @@ import { convertStringToJSON } from '../utils/convertStringToJSON';
 /*  */
 
 /* function getVillage */
-export const getVillage = async (req: Request, res: Response) => {
+export const getKekkeigenkai = async (req: Request, res: Response) => {
   try {
-    const villaje_id = parseInt(req.params.id);
-    const readResult = await methods.readVillage(villaje_id);
+    const kekkeigenkai_id = parseInt(req.params.id);
+    const readResult = await methods.readKekkeigenkai(kekkeigenkai_id);
     if (readResult.exists) {
       if (readResult.resultVillage && readResult.resultCharacter) {
         convertStringToJSON(
@@ -20,8 +20,8 @@ export const getVillage = async (req: Request, res: Response) => {
           'kekkeigenkais',
         );
         return res.json({
-          village_id: readResult.resultVillage[0][0]['village_id'],
-          name: readResult.resultVillage[0][0]['village'],
+          kekkeigenkai_id: readResult.resultVillage[0][0]['kekkeigenkai_id'],
+          name: readResult.resultVillage[0][0]['kekkeigenkai'],
           characters: readResult.resultCharacter[0],
         });
       }

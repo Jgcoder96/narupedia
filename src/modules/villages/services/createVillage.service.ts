@@ -3,7 +3,6 @@ import { methods } from '../models/methods.model';
 export const createVillage = async (village: string) => {
   const maxIdVillage = await methods.findVillageByMaxId();
   const existingVillage = await methods.findVillageByName(village);
-  /*   const existingVillage = await methods.findVillageByIdOrName(id, village); */
   if (existingVillage[0].length > 0) {
     return { exists: true, record: existingVillage[0] };
   } else {
