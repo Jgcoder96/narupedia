@@ -6,7 +6,7 @@ export const readKekkeigenkai = async (id: number) => {
   if (existingKekkeigenkai[0].length > 0 && existingCharacter[0].length > 0) {
     return {
       exists: true,
-      resultVillage: existingKekkeigenkai,
+      resultKekkeigenkai: existingKekkeigenkai,
       resultCharacter: existingCharacter,
     };
   } else {

@@ -6,13 +6,13 @@ import { methods } from '../services/methods.service';
 import { convertStringToJSON } from '../utils/convertStringToJSON';
 /*  */
 
-/* function getVillage */
-export const getKekkeigenkai = async (req: Request, res: Response) => {
+/* function getClan */
+export const getClan = async (req: Request, res: Response) => {
   try {
-    const kekkeigenkai_id = parseInt(req.params.id);
-    const readResult = await methods.readKekkeigenkai(kekkeigenkai_id);
+    const clan_id = parseInt(req.params.id);
+    const readResult = await methods.readClan(clan_id);
     if (readResult.exists) {
-      if (readResult.resultKekkeigenkai && readResult.resultCharacter) {
+      if (readResult.resultClan && readResult.resultCharacter) {
         convertStringToJSON(
           readResult.resultCharacter[0],
           'villages',
@@ -20,9 +20,8 @@ export const getKekkeigenkai = async (req: Request, res: Response) => {
           'kekkeigenkais',
         );
         return res.json({
-          kekkeigenkai_id:
-            readResult.resultKekkeigenkai[0][0]['kekkeigenkai_id'],
-          name: readResult.resultKekkeigenkai[0][0]['kekkeigenkai'],
+          clan_id: readResult.resultClan[0][0]['clan_id'],
+          name: readResult.resultClan[0][0]['kekkeigenkai'],
           characters: readResult.resultCharacter[0],
         });
       }

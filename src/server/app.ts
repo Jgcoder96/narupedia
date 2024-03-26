@@ -10,13 +10,13 @@ import { routerVillages } from '../modules/villages/routes/routes';
 
 export const app = express();
 
-// Settings
+/* Settings */
 app.set('port', 4000);
 
-// Middlewares
+/* Middlewares */
 app.use(express.json());
 
-// routes
+/* routes */
 app.use('/api/villages', routerVillages);
 app.use('/api/clans', routerClans);
 app.use('/api/kekkeigenkai', routerKekkeigenkai);
