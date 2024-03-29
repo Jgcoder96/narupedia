@@ -2,7 +2,7 @@
 
 import { Bijus } from '../../../../apis/getBijusByNarutodbTypes.api';
 import { Character } from '../createDataByCharactersTypes.data';
-import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex';
+import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex.util';
 /*  */
 
 /* function updateRecordWithBijus */

@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 /*  */
 /* import modules */
 import { methods } from '../services/methods.service';
-import { convertStringToJSON } from '../utils/convertStringToJSON';
+import { convertStringToJSON } from '../../../utils/convertStringToJSON';
 /*  */
 
 /* function getVillage */

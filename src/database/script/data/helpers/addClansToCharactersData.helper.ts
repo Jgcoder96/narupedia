@@ -1,7 +1,7 @@
 /* import modules */
 import { Clans } from '../../../../apis/getClansByNarutodbTypes.api';
 import { Character } from '../createDataByCharactersTypes.data';
-import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex';
+import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex.util';
 /*  */
 
 /* function updateRecordWithClans */

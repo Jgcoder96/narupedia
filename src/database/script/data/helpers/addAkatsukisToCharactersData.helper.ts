@@ -1,7 +1,7 @@
 /* import modules */
 import { Akatsukis } from '../../../../apis/getAkatsukiByNarutodbTypes.api';
 import { Character } from '../createDataByCharactersTypes.data';
-import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex';
+import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex.util';
 /*  */
 
 /* function updateRecordWithAkatsuki */

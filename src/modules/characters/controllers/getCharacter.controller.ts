@@ -6,13 +6,13 @@ import { methods } from '../services/methods.service';
 import { convertStringToJSON } from '../../../utils/convertStringToJSON';
 /*  */
 
-/* function getVillage */
-export const getVillage = async (req: Request, res: Response) => {
+/* function getCharacter */
+export const getCharacter = async (req: Request, res: Response) => {
   try {
-    const villaje_id = parseInt(req.params.id);
-    const readResult = await methods.readVillage(villaje_id);
+    const character_id = parseInt(req.params.id);
+    const readResult = await methods.readCharacter(character_id);
     if (readResult.exists) {
-      if (readResult.resultVillage && readResult.resultCharacter) {
+      if (readResult.resultCharacter) {
         convertStringToJSON(
           readResult.resultCharacter[0],
           'villages',
@@ -20,9 +20,7 @@ export const getVillage = async (req: Request, res: Response) => {
           'kekkeigenkais',
         );
         return res.json({
-          village_id: readResult.resultVillage[0][0]['village_id'],
-          name: readResult.resultVillage[0][0]['village'],
-          characters: readResult.resultCharacter[0],
+          character: readResult.resultCharacter[0][0],
         });
       }
     } else {
