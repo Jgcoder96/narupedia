@@ -1,9 +1,5 @@
-/* import libreries */
 import { Request, Response } from 'express';
-/*  */
-/* import modules */
 import { methods } from '../services/methods.service';
-/*  */
 
 export const putVillage = async (req: Request, res: Response) => {
   try {

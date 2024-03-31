@@ -1,13 +1,10 @@
-/* interface Characters */
 export interface Characters {
   characters: Character[];
   currentPage: number;
   pageSize: number;
   totalCharacters: number;
 }
-/*  */
 
-/* interface Character */
 export interface Character {
   id: number;
   name: string;
@@ -61,9 +58,7 @@ export interface Character {
   土岐Toki?: 三代目風影_SandaimeKazekage;
   椿Tsubaki?: 三代目風影_SandaimeKazekage;
 }
-/*  */
 
-/* interface Debut */
 export interface Debut {
   novel?: string;
   movie?: Movie;
@@ -73,9 +68,7 @@ export interface Debut {
   game?: string;
   ova?: string;
 }
-/*  */
 
-/* type AppearsIn */
 export type AppearsIn =
   | 'Novel, Movie'
   | 'Anime, Manga, Novel, Game, Movie'
@@ -101,9 +94,7 @@ export type AppearsIn =
   | 'Game, Movie'
   | 'Anime, Game, Movie'
   | 'Manga, Movie';
-/*  */
 
-/* type Movie */
 export type Movie =
   | 'Naruto Shippūden the Movie: Bonds'
   | 'The Last: Naruto the Movie'
@@ -118,9 +109,7 @@ export type Movie =
   | 'Naruto the Movie: Legend of the Stone of Gelel'
   | 'Road to Ninja: Naruto the Movie  (Pain)'
   | 'The Last: Naruto the Movie  (Mentioned)';
-/*  */
 
-/* interface PersonalClass */
 export interface PersonalClass {
   species?: string;
   status?: Status;
@@ -143,9 +132,7 @@ export interface PersonalClass {
   kekkeiTōta?: string;
   kekkeiMōra?: string[] | string;
 }
-/*  */
 
-/* interface Age */
 export interface Age {
   'Part II'?: string;
   'Part I'?: string;
@@ -156,50 +143,34 @@ export interface Age {
   Gaiden?: string;
   'Blank Period'?: string;
 }
-/*  */
 
-/* type BloodType */
 export type BloodType = 'O' | 'A' | 'AB' | 'B';
-/*  */
 
-/* type Sex */
 export type Sex =
   | 'Male'
   | 'Female'
   | 'File:Gender Other.svg Other'
   | 'File:Gender Various.svg Various';
-/*  */
 
-/* type Status */
 export type Status = 'Incapacitated' | 'Deceased' | 'Presumed Deceased';
-/*  */
 
-/* interface Weight */
 export interface Weight {
   'Part II'?: string;
   'Part I'?: string;
 }
-/*  */
 
-/* interface RankClass */
 export interface RankClass {
   ninjaRank?: Age;
   ninjaRegistration?: string;
 }
-/*  */
 
-/* interface VoiceActors */
 export interface VoiceActors {
   japanese?: string[] | string;
   english?: string[] | string;
 }
-/*  */
 
-/* interface 三代目風影_SandaimeKazekage */
 export interface 三代目風影_SandaimeKazekage {}
-/*  */
 
-// Converts JSON strings to/from your types
 export class Convert {
   public static toCharacters(json: string): Characters {
     return JSON.parse(json);
@@ -209,4 +180,3 @@ export class Convert {
     return JSON.stringify(value);
   }
 }
-/*  */

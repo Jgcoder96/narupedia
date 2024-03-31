@@ -1,7 +1,5 @@
-/* import modules */
 import { methods } from '../../data/methods.data';
 
-/* function queryKekkeigenkaiXCharacter */
 export const createQueryOfKekkeigenkaiXCharacters = async () => {
   const dataCharacters = await methods.createDataByCharacters();
   const dataKekkeigenkai = await methods.createDataByKekkeigenkai();
@@ -26,4 +24,3 @@ export const createQueryOfKekkeigenkaiXCharacters = async () => {
   console.log('query to kekkeigenkai x character created successful');
   return query;
 };
-/*  */

@@ -1,9 +1,6 @@
-/* import modules */
 import { methods } from '../../../apis/methods.api';
 import { Kekkeigenkai } from './createDataByKekkeigenkaiTypes.data';
-/*  */
 
-/* function recordData */
 export const createDataByKekkeigenkai = async () => {
   const dataKekkeigenkai = await methods.getKekkeigenkaiByNarutodb();
   const record: Kekkeigenkai[] = [];
@@ -22,4 +19,3 @@ export const createDataByKekkeigenkai = async () => {
   }
   return record;
 };
-/*  */

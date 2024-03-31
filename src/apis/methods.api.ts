@@ -1,13 +1,10 @@
-/* import modules */
 import { getCharacters } from './getCharactersByNarutodb.api';
 import { getVillagesByNarutodb } from './getVillagesByNarutodb.api';
 import { getClansByNarutodb } from './getClansByNarutodb.api';
 import { getKekkeigenkaiByNarutodb } from './getKekkeigenkaiByNarutodb.api';
 import { getAkatzukisByNarutodb } from './getAkatsukiByNarutodb.api';
 import { getBijusByNarutodb } from './getBijusByNarutodb.api';
-/*  */
 
-/* request object */
 export const methods = {
   getCharacters,
   getVillagesByNarutodb,
@@ -16,4 +13,3 @@ export const methods = {
   getAkatzukisByNarutodb,
   getBijusByNarutodb,
 };
-/*  */

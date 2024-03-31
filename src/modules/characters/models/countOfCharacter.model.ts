@@ -1,5 +1,5 @@
-import { getConnection } from '../../../database/script/connection/connection';
 import { FieldPacket, RowDataPacket } from 'mysql2';
+import { getConnection } from '../../../database/script/connection/connection';
 import { queries } from '../queries/queries';
 
 export const countOfCharacter = async () => {

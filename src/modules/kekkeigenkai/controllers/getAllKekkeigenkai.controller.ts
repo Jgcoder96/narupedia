@@ -1,14 +1,10 @@
-/* import libreries */
 import { Request, Response } from 'express';
-/*  */
-/* import modules */
 import { methods } from '../services/methods.service';
-/*  */
 
-/* function getVillages */
 export const getAllKekkeigenkai = async (_req: Request, res: Response) => {
   try {
     const readResult = await methods.readAllKekkeigenkai();
+
     if (readResult.exists) {
       return res.json({ kekkeigenkais: readResult.result });
     } else {
@@ -21,4 +17,3 @@ export const getAllKekkeigenkai = async (_req: Request, res: Response) => {
     return res.status(500).json({ error: 'Internal Server Error' });
   }
 };
-/*  */

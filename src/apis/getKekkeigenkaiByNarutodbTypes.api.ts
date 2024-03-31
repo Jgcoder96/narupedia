@@ -1,21 +1,16 @@
-/* interface Kekkeigenkai */
 export interface Kekkeigenkai {
   kekkeigenkai: KekkeigenkaiElement[];
   currentPage: number;
   pageSize: number;
   totalKekkeiGenkai: number;
 }
-/*  */
 
-/* interface KekkeigenkaiElement */
 export interface KekkeigenkaiElement {
   id: number;
   name: string;
   characters: Character[];
 }
-/*  */
 
-/* interface Character */
 export interface Character {
   id: number;
   name: string;
@@ -34,9 +29,7 @@ export interface Character {
   三代目風影SandaimeKazekage?: 三代目風影_SandaimeKazekage;
   十尾Jūbi?: 三代目風影_SandaimeKazekage;
 }
-/*  */
 
-/* interface Debut */
 export interface Debut {
   anime?: string;
   novel?: string;
@@ -46,9 +39,7 @@ export interface Debut {
   movie?: string;
   ova?: string;
 }
-/*  */
 
-/* interface Personal */
 export interface Personal {
   sex?: Sex;
   kekkeiGenkai: string[] | string;
@@ -71,9 +62,7 @@ export interface Personal {
   kekkeiMōra?: string;
   kekkeiTōta?: string;
 }
-/*  */
 
-/* interface Age */
 export interface Age {
   'Part II'?: string;
   'Academy Graduate'?: string;
@@ -84,35 +73,23 @@ export interface Age {
   'Boruto Manga'?: string;
   Gaiden?: string;
 }
-/*  */
 
-/* type BloodType */
 export type BloodType = 'B' | 'AB' | 'A' | 'O';
-/*  */
 
-/* type Sex */
 export type Sex = 'Male' | 'Female' | 'File:Gender Various.svg Various';
-/*  */
 
-/* type Status */
 export type Status = 'Deceased' | 'Incapacitated';
-/*  */
 
-/* interface Weight */
 export interface Weight {
   'Part II'?: string;
   'Part I'?: string;
 }
-/*  */
 
-/* interface Rank */
 export interface Rank {
   ninjaRank?: Age;
   ninjaRegistration?: string;
 }
-/*  */
 
-/* type UniqueTrait */
 export type UniqueTrait =
   | 'Can absorb chakra'
   | "Replicating techniques from other's chakra"
@@ -120,20 +97,14 @@ export type UniqueTrait =
   | 'Manipulates sand'
   | 'Influences its sleeping jinchūriki'
   | 'Natural cursed seal markings';
-/*  */
 
-/* interface VoiceActors */
 export interface VoiceActors {
   japanese?: string[] | string;
   english?: string[] | string;
 }
-/*  */
 
-/* interface 三代目風影_SandaimeKazekage */
 export interface 三代目風影_SandaimeKazekage {}
-/*  */
 
-// Converts JSON strings to/from your types
 export class Convert {
   public static toKekkeigenkai(json: string): Kekkeigenkai {
     return JSON.parse(json);
@@ -143,4 +114,3 @@ export class Convert {
     return JSON.stringify(value);
   }
 }
-/*  */

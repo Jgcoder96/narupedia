@@ -1,7 +1,5 @@
-/* import modules */
 import { methods } from '../../data/methods.data';
 
-/* function queryClanXCharacter */
 export const createQueryOfClanXCharacter = async () => {
   const dataCharacters = await methods.createDataByCharacters();
   const dataClans = await methods.createDataByClans();
@@ -26,4 +24,3 @@ export const createQueryOfClanXCharacter = async () => {
   console.log('query to clan x character created successful');
   return query;
 };
-/*  */

@@ -1,14 +1,11 @@
-/* import libreries */
 import { Request, Response } from 'express';
-/*  */
-/* import modules */
 import { methods } from '../services/methods.service';
-/*  */
 
 export const postCharacter = async (req: Request, res: Response) => {
   try {
     const { character, image } = req.body;
     const creationResult = await methods.createCharacter(character, image);
+
     if (creationResult.exists) {
       res.json({
         res: false,

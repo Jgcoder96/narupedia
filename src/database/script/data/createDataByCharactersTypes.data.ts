@@ -1,4 +1,3 @@
-/* type Character */
 export type Character = {
   id?: number;
   name?: string;
@@ -18,4 +17,3 @@ export type Character = {
   group?: string[];
   jinchuriki?: string[];
 };
-/*  */

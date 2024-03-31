@@ -1,7 +1,5 @@
-/* import modules */
 import { methods } from '../../data/methods.data';
 
-/* function queryCharacters */
 export const createQueryOfCharacters = async () => {
   const dataCharacters = await methods.createDataByCharacters();
   console.log(dataCharacters);
@@ -20,4 +18,3 @@ export const createQueryOfCharacters = async () => {
   console.log('query to characters created successful');
   return query;
 };
-/*  */

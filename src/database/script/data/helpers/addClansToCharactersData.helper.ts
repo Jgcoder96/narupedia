@@ -1,10 +1,7 @@
-/* import modules */
 import { Clans } from '../../../../apis/getClansByNarutodbTypes.api';
 import { Character } from '../createDataByCharactersTypes.data';
 import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex.util';
-/*  */
 
-/* function updateRecordWithClans */
 export const addClansToCharactersData = (data: Clans, record: Character[]) => {
   data.clans.map((clan) => {
     clan.characters.map((element) => {
@@ -26,4 +23,3 @@ export const addClansToCharactersData = (data: Clans, record: Character[]) => {
     });
   });
 };
-/*  */

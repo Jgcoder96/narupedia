@@ -1,7 +1,5 @@
-/* import modules */
 import { methods } from '../../data/methods.data';
 
-/* function queryClans */
 export const createQueryOfKekkeigenkai = async () => {
   const data = await methods.createDataByKekkeigenkai();
   let query =
@@ -19,4 +17,3 @@ export const createQueryOfKekkeigenkai = async () => {
   console.log('query to kekkeigenkai created successful');
   return query;
 };
-/*  */

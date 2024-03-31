@@ -1,12 +1,7 @@
-/* import libreries */
 import axios from 'axios';
-/*  */
-/* import modules */
 import { Bijus } from './getBijusByNarutodbTypes.api';
 import { endPointByNarutodb } from './endPointsByNarutodb.api';
-/*  */
 
-/* function getBijus */
 export const getBijusByNarutodb = async () => {
   try {
     const response = await axios.get(endPointByNarutodb.bijus);
@@ -16,4 +11,3 @@ export const getBijusByNarutodb = async () => {
     console.log(error);
   }
 };
-/*  */

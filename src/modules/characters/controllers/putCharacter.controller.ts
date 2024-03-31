@@ -1,14 +1,11 @@
-/* import libreries */
 import { Request, Response } from 'express';
-/*  */
-/* import modules */
 import { methods } from '../services/methods.service';
-/*  */
 
 export const putCharacter = async (req: Request, res: Response) => {
   try {
     const { id, character, image } = req.body;
     const creationResult = await methods.updateCharacter(id, character, image);
+
     if (!creationResult.exists) {
       res.json({
         res: creationResult.exists,

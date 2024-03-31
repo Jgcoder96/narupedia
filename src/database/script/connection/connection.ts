@@ -1,10 +1,6 @@
-/* import libreries */
 import mysql from 'mysql2/promise';
-/* import modules */
 import config from '../../../config/config';
-/*  */
 
-/* connection to data base */
 const connection = mysql.createConnection({
   host: config.host,
   database: config.database,

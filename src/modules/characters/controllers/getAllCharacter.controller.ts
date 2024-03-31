@@ -1,12 +1,7 @@
-/* import libreries */
 import { Request, Response } from 'express';
-/*  */
-/* import modules */
 import { methods } from '../services/methods.service';
 import { convertStringToJSON } from '../../../utils/convertStringToJSON';
-/*  */
 
-/* function getCharacters */
 export const getAllCharacter = async (req: Request, res: Response) => {
   const queryPage = req.query.page,
     queryLimit = req.query.limit;
@@ -19,41 +14,48 @@ export const getAllCharacter = async (req: Request, res: Response) => {
 
       const readResult = await methods.readAllCharacterWithPage(offset, limit);
 
-      if (readResult.exists) {
-        if (readResult.countCharacter && readResult.resultCharacter) {
-          const pages = Math.ceil(
-            readResult.countCharacter[0][0]['pages'] / limit,
-          );
-          console.log(pages);
-          convertStringToJSON(
-            readResult.resultCharacter[0],
-            'villages',
-            'clans',
-            'kekkeigenkais',
-          );
-          return res.json({
-            characters: readResult.resultCharacter[0],
-            TotalCharacter: readResult.countCharacter[0][0],
-            pages,
-            page,
-          });
-        }
+      if (
+        readResult.exists &&
+        readResult.countCharacter &&
+        readResult.resultCharacter
+      ) {
+        const pages = Math.ceil(
+          readResult.countCharacter[0][0]['pages'] / limit,
+        );
+
+        convertStringToJSON(
+          readResult.resultCharacter[0],
+          'villages',
+          'clans',
+          'kekkeigenkais',
+        );
+
+        return res.json({
+          characters: readResult.resultCharacter[0],
+          TotalCharacter: readResult.countCharacter[0][0],
+          pages,
+          page,
+        });
       }
     } else {
       const readResult = await methods.readAllCharacter();
-      if (readResult.exists) {
-        if (readResult.countCharacter && readResult.resultCharacter) {
-          convertStringToJSON(
-            readResult.resultCharacter[0],
-            'villages',
-            'clans',
-            'kekkeigenkais',
-          );
-          return res.json({
-            characters: readResult.resultCharacter[0],
-            TotalCharacter: readResult.countCharacter[0][0],
-          });
-        }
+
+      if (
+        readResult.exists &&
+        readResult.countCharacter &&
+        readResult.resultCharacter
+      ) {
+        convertStringToJSON(
+          readResult.resultCharacter[0],
+          'villages',
+          'clans',
+          'kekkeigenkais',
+        );
+
+        return res.json({
+          characters: readResult.resultCharacter[0],
+          TotalCharacter: readResult.countCharacter[0][0],
+        });
       }
     }
   } catch (error) {
@@ -61,4 +63,3 @@ export const getAllCharacter = async (req: Request, res: Response) => {
     return res.status(500).json({ error: 'Internal Server Error' });
   }
 };
-/*  */

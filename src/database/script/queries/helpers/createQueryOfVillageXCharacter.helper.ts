@@ -1,7 +1,5 @@
-/* import modules */
 import { methods } from '../../data/methods.data';
 
-/* function queryVillageXCharacter */
 export const createQueryOfVillageXCharacters = async () => {
   const dataCharacters = await methods.createDataByCharacters();
   const dataVillages = await methods.createDataByVillages();
@@ -26,4 +24,3 @@ export const createQueryOfVillageXCharacters = async () => {
   console.log('village x character created successful');
   return query;
 };
-/*  */

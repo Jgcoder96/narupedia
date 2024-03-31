@@ -1,10 +1,7 @@
-/* import modules */
 import { Kekkeigenkai } from '../../../../apis/getKekkeigenkaiByNarutodbTypes.api';
 import { Character } from '../createDataByCharactersTypes.data';
 import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex.util';
-/*  */
 
-/* function updateRecordWithKekkeigenkai */
 export const addKekkeigenkaiToCharactersData = (
   data: Kekkeigenkai,
   record: Character[],
@@ -29,4 +26,3 @@ export const addKekkeigenkaiToCharactersData = (
     });
   });
 };
-/*  */

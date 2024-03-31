@@ -1,12 +1,7 @@
-/* import libreries */
 import { Request, Response } from 'express';
-/*  */
-/* import modules */
 import { methods } from '../services/methods.service';
 import { convertStringToJSON } from '../../../utils/convertStringToJSON';
-/*  */
 
-/* function getClan */
 export const getClan = async (req: Request, res: Response) => {
   try {
     const clan_id = parseInt(req.params.id);

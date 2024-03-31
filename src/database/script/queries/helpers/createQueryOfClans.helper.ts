@@ -1,7 +1,5 @@
-/* import modules */
 import { methods } from '../../data/methods.data';
 
-/* function queryClans */
 export const createQueryOfClans = async () => {
   const data = await methods.createDataByClans();
   let query = 'INSERT INTO clans (clan_id, clan) VALUES ';
@@ -16,4 +14,3 @@ export const createQueryOfClans = async () => {
   console.log('query to clans created successful');
   return query;
 };
-/*  */

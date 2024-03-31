@@ -1,9 +1,6 @@
-/* import modules */
 import { methods } from '../../../apis/methods.api';
 import { Clan } from './createDataByClansTypes.data';
-/*  */
 
-/* function recordData */
 export const createDataByClans = async () => {
   const dataClans = await methods.getClansByNarutodb();
   const record: Clan[] = [];
@@ -22,4 +19,3 @@ export const createDataByClans = async () => {
   }
   return record;
 };
-/*  */

@@ -1,4 +1,3 @@
-/* import modules */
 import { methods } from '../../../apis/methods.api';
 import { Character } from './createDataByCharactersTypes.data';
 import { addDataToCharacters } from './helpers/addDataToCharacters.helper';
@@ -7,24 +6,17 @@ import { addKekkeigenkaiToCharactersData } from './helpers/addKekkeigenkaiToChar
 import { addAkatsukisToCharactersData } from './helpers/addAkatsukisToCharactersData.helper';
 import { addBijusToCharactersData } from './helpers/addBijusToCharactersData.helper';
 import { addVillagesToCharactersData } from './helpers/addVillagesToCharactersData.helper';
-/*  */
 
-/* function createDataByCharacters */
 export const createDataByCharacters = async () => {
-  /* request */
   const dataCharacters = await methods.getCharacters(),
     dataVillages = await methods.getVillagesByNarutodb(),
     dataClans = await methods.getClansByNarutodb(),
     datakekkeigenkai = await methods.getKekkeigenkaiByNarutodb(),
     dataAkatsukis = await methods.getAkatzukisByNarutodb(),
     dataBijus = await methods.getBijusByNarutodb();
-  /*  */
 
-  /* record character */
   const record: Character[] = [];
-  /*  */
 
-  /* update record */
   if (
     dataCharacters &&
     dataClans &&
@@ -40,7 +32,5 @@ export const createDataByCharacters = async () => {
     addAkatsukisToCharactersData(dataAkatsukis, record);
     addBijusToCharactersData(dataBijus, record);
   }
-  /*  */
   return record;
 };
-/*  */

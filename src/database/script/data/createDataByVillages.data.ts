@@ -1,9 +1,6 @@
-/* import modules */
 import { methods } from '../../../apis/methods.api';
 import { Village } from './createDataByVillagesTypes.data';
-/*  */
 
-/* function recordData */
 export const createDataByVillages = async () => {
   const dataVillages = await methods.getVillagesByNarutodb();
   const record: Village[] = [];
@@ -22,4 +19,3 @@ export const createDataByVillages = async () => {
   }
   return record;
 };
-/*  */

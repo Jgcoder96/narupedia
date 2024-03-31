@@ -1,10 +1,7 @@
-/* import modules */
 import { Akatsukis } from '../../../../apis/getAkatsukiByNarutodbTypes.api';
 import { Character } from '../createDataByCharactersTypes.data';
 import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex.util';
-/*  */
 
-/* function updateRecordWithAkatsuki */
 export const addAkatsukisToCharactersData = (
   data: Akatsukis,
   record: Character[],
@@ -19,4 +16,3 @@ export const addAkatsukisToCharactersData = (
     });
   });
 };
-/*  */

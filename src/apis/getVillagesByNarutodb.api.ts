@@ -1,10 +1,7 @@
-/* import libreries */
 import axios from 'axios';
-/* import modules */
 import { Villages } from './getVillagesByNarutodbTypes.api';
 import { endPointByNarutodb } from './endPointsByNarutodb.api';
 
-/* function getVillages */
 export const getVillagesByNarutodb = async () => {
   try {
     const response = await axios.get(endPointByNarutodb.villages);
@@ -14,4 +11,3 @@ export const getVillagesByNarutodb = async () => {
     console.log(error);
   }
 };
-/*  */

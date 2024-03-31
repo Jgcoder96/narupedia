@@ -1,21 +1,16 @@
-/* interface Clans */
 export interface Clans {
   clans: Clan[];
   currentPage: number;
   pageSize: number;
   totalClans: number;
 }
-/*  */
 
-/* interface Clan */
 export interface Clan {
   id: number;
   name: string;
   characters: Character[];
 }
-/*  */
 
-/* interface Character */
 export interface Character {
   id: number;
   name: string;
@@ -36,9 +31,7 @@ export interface Character {
   死韻Shiin?: 加流羅_Karura;
   香燐Karin?: 加流羅_Karura;
 }
-/*  */
 
-/* interface Debut */
 export interface Debut {
   anime?: string;
   appearsIn: string;
@@ -48,9 +41,7 @@ export interface Debut {
   game?: string;
   ova?: string;
 }
-/*  */
 
-/* interface Personal */
 export interface Personal {
   sex?: Sex;
   affiliation?: string[] | string;
@@ -72,9 +63,7 @@ export interface Personal {
   tailedBeast?: string;
   kekkeiMōra?: string[] | string;
 }
-/*  */
 
-/* interface Age */
 export interface Age {
   'Part II'?: string;
   'Part I'?: string;
@@ -84,13 +73,9 @@ export interface Age {
   Gaiden?: string;
   'Blank Period'?: string;
 }
-/*  */
 
-/* type BloodType */
 export type BloodType = 'A' | 'AB' | 'O' | 'B';
-/*  */
 
-/* interface Height */
 export interface Height {
   'Part I'?: string;
   'Part II'?: string;
@@ -99,49 +84,33 @@ export interface Height {
   'Boruto Movie'?: string;
   'Boruto Manga'?: string;
 }
-/*  */
 
-/* type Sex */
 export type Sex = 'Female' | 'Male';
-/*  */
 
-/* type Species */
 export type Species =
   | 'Ninken'
   | 'Celestial Being-Human hybrid'
   | 'Celestial Being';
-/*  */
 
-/* type Status */
 export type Status = 'Deceased' | 'Presumed Deceased' | 'Incapacitated';
-/*  */
 
-/* interface Weight */
 export interface Weight {
   'Part I'?: string;
   'Part II'?: string;
 }
-/*  */
 
-/* interface Rank */
 export interface Rank {
   ninjaRank?: Height;
   ninjaRegistration?: string;
 }
-/*  */
 
-/* interface VoiceActors */
 export interface VoiceActors {
   japanese?: string[] | string;
   english?: string[] | string;
 }
-/*  */
 
-/* interface 加流羅_Karura */
 export interface 加流羅_Karura {}
-/*  */
 
-// Converts JSON strings to/from your types
 export class Convert {
   public static toClans(json: string): Clans {
     return JSON.parse(json);
@@ -151,4 +120,3 @@ export class Convert {
     return JSON.stringify(value);
   }
 }
-/*  */

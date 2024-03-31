@@ -1,7 +1,5 @@
-/* import modules */
 import { methods } from '../../data/methods.data';
 
-/* function queryVillages */
 export const createQueryOfVillages = async () => {
   const data = await methods.createDataByVillages();
   let query = 'INSERT INTO villages (village_id, village) VALUES ';
@@ -16,4 +14,3 @@ export const createQueryOfVillages = async () => {
   console.log('query to villages created successful');
   return query;
 };
-/*  */

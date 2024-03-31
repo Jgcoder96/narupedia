@@ -1,4 +1,3 @@
-/* endPoint object */
 export const endPointByNarutodb: EndPointByNarutodb = {
   characters: 'https://narutodb.xyz/api/character?page=1&limit=1430',
   clans: 'https://narutodb.xyz/api/clan?page=1&limit=58',
@@ -7,9 +6,7 @@ export const endPointByNarutodb: EndPointByNarutodb = {
   akatsukis: 'https://narutodb.xyz/api/akatsuki?page=1&limit=44',
   bijus: 'https://narutodb.xyz/api/tailed-beast',
 };
-/*  */
 
-/* type endPoint */
 type EndPointByNarutodb = {
   characters: string;
   akatsukis: string;
@@ -18,4 +15,3 @@ type EndPointByNarutodb = {
   villages: string;
   kekkeigenkai: string;
 };
-/*  */

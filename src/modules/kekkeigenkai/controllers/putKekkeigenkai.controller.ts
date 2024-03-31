@@ -1,14 +1,12 @@
-/* import libreries */
 import { Request, Response } from 'express';
-/*  */
-/* import modules */
 import { methods } from '../services/methods.service';
-/*  */
 
 export const putKekkeigenkai = async (req: Request, res: Response) => {
   try {
     const { id, kekkeigenkai } = req.body;
+
     const creationResult = await methods.updateKekkeigenkai(id, kekkeigenkai);
+
     if (!creationResult.exists) {
       res.json({
         res: creationResult.exists,

@@ -1,14 +1,11 @@
-/* import libreries */
 import { Request, Response } from 'express';
-/*  */
-/* import modules */
 import { methods } from '../services/methods.service';
-/*  */
 
 export const postKekkeigenkai = async (req: Request, res: Response) => {
   try {
     const { kekkeigenkai } = req.body;
     const creationResult = await methods.createKekkeigenkai(kekkeigenkai);
+
     if (creationResult.exists) {
       res.json({
         res: false,

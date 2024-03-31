@@ -1,28 +1,23 @@
-/* import libreries */
 import { Request, Response } from 'express';
-/*  */
-/* import modules */
 import { methods } from '../services/methods.service';
 import { convertStringToJSON } from '../../../utils/convertStringToJSON';
-/*  */
 
-/* function getCharacter */
 export const getCharacter = async (req: Request, res: Response) => {
   try {
     const character_id = parseInt(req.params.id);
     const readResult = await methods.readCharacter(character_id);
-    if (readResult.exists) {
-      if (readResult.resultCharacter) {
-        convertStringToJSON(
-          readResult.resultCharacter[0],
-          'villages',
-          'clans',
-          'kekkeigenkais',
-        );
-        return res.json({
-          character: readResult.resultCharacter[0][0],
-        });
-      }
+
+    if (readResult.exists && readResult.resultCharacter) {
+      convertStringToJSON(
+        readResult.resultCharacter[0],
+        'villages',
+        'clans',
+        'kekkeigenkais',
+      );
+
+      return res.json({
+        character: readResult.resultCharacter[0][0],
+      });
     } else {
       return res.json({
         message: 'not found records to data base',
@@ -33,4 +28,3 @@ export const getCharacter = async (req: Request, res: Response) => {
     return res.status(500).json({ error: 'Internal Server Error' });
   }
 };
-/*  */

@@ -1,8 +1,5 @@
-/* import libreries */
 import { FieldPacket, RowDataPacket } from 'mysql2';
-/*  */
 
-/* function  poolPromise */
 export const poolPromise = async (
   arrayQuery: [RowDataPacket[], FieldPacket[]][],
 ) => {
@@ -10,4 +7,3 @@ export const poolPromise = async (
     await Promise.all(arrayQuery);
   return result;
 };
-/*  */

@@ -1,11 +1,6 @@
-/* import libreries */
 import { Request, Response } from 'express';
-/*  */
-/* import modules */
 import { methods } from '../services/methods.service';
-/*  */
 
-/* function getVillages */
 export const getAllClan = async (_req: Request, res: Response) => {
   try {
     const readResult = await methods.readAllClan();
@@ -21,4 +16,3 @@ export const getAllClan = async (_req: Request, res: Response) => {
     return res.status(500).json({ error: 'Internal Server Error' });
   }
 };
-/*  */

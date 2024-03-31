@@ -1,4 +1,3 @@
-/* import modules */
 import { createQueryOfVillages } from './createQueryOfVillages.helper';
 import { createQueryOfVillageXCharacters } from './createQueryOfVillageXCharacter.helper';
 import { createQueryOfClans } from './createQueryOfClans.helper';
@@ -7,7 +6,6 @@ import { createQueryOfKekkeigenkai } from './createQueryOfKekkeigenkai.helper';
 import { createQueryOfKekkeigenkaiXCharacters } from './createQueryOfKekkeigenkaiXCharacter.helper';
 import { createQueryOfCharacters } from './createQueryOfCharacters.helper';
 
-/*  methods object */
 export const methods = {
   createQueryOfVillages,
   createQueryOfVillageXCharacters,
@@ -17,4 +15,3 @@ export const methods = {
   createQueryOfKekkeigenkaiXCharacters,
   createQueryOfCharacters,
 };
-/*  */

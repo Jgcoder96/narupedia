@@ -1,10 +1,7 @@
-/* import modules */
 import { Villages } from '../../../../apis/getVillagesByNarutodbTypes.api';
 import { Character } from '../createDataByCharactersTypes.data';
 import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex.util';
-/*  */
 
-/* function updateRecordWithVillages */
 export const addVillagesToCharactersData = (
   data: Villages,
   record: Character[],
@@ -29,4 +26,3 @@ export const addVillagesToCharactersData = (
     });
   });
 };
-/*  */

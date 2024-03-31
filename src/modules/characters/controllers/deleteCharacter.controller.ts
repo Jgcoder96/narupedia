@@ -1,16 +1,14 @@
-/* import libreries */
 import { Request, Response } from 'express';
-/*  */
-/* import modules */
 import { methods } from '../services/methods.service';
-/*  */
 
 export const deleteCharacter = async (req: Request, res: Response) => {
   try {
     const { id } = req.body;
+
     const deleteResult = await methods.deleteCharacter(id);
+
     if (!deleteResult.exists) {
-      res.json({
+      res.status(404).json({
         res: deleteResult.exists,
         message: `not exists records that matches with id: ${id}`,
       });
