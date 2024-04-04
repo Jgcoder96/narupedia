@@ -13,6 +13,7 @@ export const getVillage = async (req: Request, res: Response) => {
           'villages',
           'clans',
           'kekkeigenkais',
+          'images',
         );
         return res.json({
           village_id: readResult.resultVillage[0][0]['village_id'],

@@ -12,10 +12,10 @@ export const createDataByVillages = async () => {
       village.name = element.name;
       record.push(village);
     });
-    const village: Village = {};
+    /*  const village: Village = {};
     village.id = record.length;
     village.name = 'unknown';
-    record.push(village);
+    record.push(village); */
   }
   return record;
 };

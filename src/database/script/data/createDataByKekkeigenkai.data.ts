@@ -12,10 +12,6 @@ export const createDataByKekkeigenkai = async () => {
       kekkeigenkai.name = element.name;
       record.push(kekkeigenkai);
     });
-    const kekkeigenkai: Kekkeigenkai = {};
-    kekkeigenkai.id = record.length;
-    kekkeigenkai.name = 'unknown';
-    record.push(kekkeigenkai);
   }
   return record;
 };

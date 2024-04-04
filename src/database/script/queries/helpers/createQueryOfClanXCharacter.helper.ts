@@ -12,11 +12,6 @@ export const createQueryOfClanXCharacter = async () => {
           const stringCharacter = `("0","${element.id}","${character.id}"),`;
           query = query + stringCharacter;
         });
-      } else {
-        const stringCharacter = `("0","${dataClans.length - 1}","${
-          character.id
-        }"),`;
-        query = query + stringCharacter;
       }
     });
     query = query.slice(0, -1) + ';';

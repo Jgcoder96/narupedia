@@ -2,11 +2,11 @@ export type Character = {
   id?: number;
   name?: string;
   image?: string[];
-  clan?: {
+  village?: {
     id?: number;
     name?: string;
   }[];
-  village?: {
+  clan?: {
     id?: number;
     name?: string;
   }[];

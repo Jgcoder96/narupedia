@@ -12,10 +12,6 @@ export const createDataByClans = async () => {
       clan.name = element.name;
       record.push(clan);
     });
-    const clan: Clan = {};
-    clan.id = record.length;
-    clan.name = 'unknown';
-    record.push(clan);
   }
   return record;
 };

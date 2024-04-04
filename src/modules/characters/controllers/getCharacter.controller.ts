@@ -13,6 +13,7 @@ export const getCharacter = async (req: Request, res: Response) => {
         'villages',
         'clans',
         'kekkeigenkais',
+        'images',
       );
 
       return res.json({

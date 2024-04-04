@@ -28,6 +28,7 @@ export const getAllCharacter = async (req: Request, res: Response) => {
           'villages',
           'clans',
           'kekkeigenkais',
+          'images',
         );
 
         return res.json({
@@ -50,6 +51,7 @@ export const getAllCharacter = async (req: Request, res: Response) => {
           'villages',
           'clans',
           'kekkeigenkais',
+          'images',
         );
 
         return res.json({

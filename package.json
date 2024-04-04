@@ -14,10 +14,12 @@
     "dev": "ts-node-dev ./src/index.ts",
     "tsc": "tsc",
     "lint": "eslint \"*/**/.{js,ts,tsx}\" --quiet --fix",
-    "createDatabase": "ts-node-dev ./src/database/script/queries/createDatabase.querie.ts"
+    "createDatabase": "ts-node-dev ./src/database/script/queries/createDatabase.querie.ts",
+    "prueba": "ts-node-dev ./src/database/script/data/createDataByCharacters.data.ts"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
     "@types/node": "20.11.26",
     "@typescript-eslint/eslint-plugin": "6.15.0",
     "eslint": "8.56.0",
@@ -31,6 +33,7 @@
     "axios": "^1.6.3",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "morgan": "^1.10.0",
     "mysql2": "^3.6.5",
     "zod": "^3.22.4"
   }

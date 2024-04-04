@@ -17,6 +17,7 @@ export const getKekkeigenkai = async (req: Request, res: Response) => {
         'villages',
         'clans',
         'kekkeigenkais',
+        'images',
       );
       return res.json({
         kekkeigenkai_id: readResult.resultKekkeigenkai[0][0]['kekkeigenkai_id'],

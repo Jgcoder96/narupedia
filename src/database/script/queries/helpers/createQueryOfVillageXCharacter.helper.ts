@@ -12,12 +12,12 @@ export const createQueryOfVillageXCharacters = async () => {
           const stringCharacter = `("0","${element.id}","${character.id}"),`;
           query = query + stringCharacter;
         });
-      } else {
+      } /* else {
         const stringCharacter = `("0","${dataVillages.length - 1}","${
           character.id
         }"),`;
         query = query + stringCharacter;
-      }
+      } */
     });
     query = query.slice(0, -1) + ';';
   }
