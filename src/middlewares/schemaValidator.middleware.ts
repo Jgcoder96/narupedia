@@ -1,5 +1,6 @@
 import { AnyZodObject, ZodError } from 'zod';
 import { Request, Response, NextFunction } from 'express';
+import { messages } from '../libs/messages.libs';
 
 export const schemaValidator =
   (schema: AnyZodObject) =>
@@ -13,6 +14,8 @@ export const schemaValidator =
           .status(400)
           .json(error.issues.map((issue) => ({ message: issue.message })));
       }
-      return res.status(500).json({ message: 'internal server eror ' });
+      return res
+        .status(500)
+        .json({ res: false, message: messages.serverError });
     }
   };

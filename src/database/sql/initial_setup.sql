@@ -1,46 +1,28 @@
-/* DATA BASE */
-DROP DATABASE narupedia;
-
-SHOW DATABASES;
-
 CREATE DATABASE IF NOT EXISTS narupedia;
 
 USE narupedia;
 
-/* TABLES */
-
-SHOW TABLES;
-
-/* table villages */
 CREATE TABLE villages (
 	village_id int UNSIGNED PRIMARY KEY, 
 	village varchar(50)
 );
-/*  */
 
-/* table clans */
 CREATE TABLE clans (
 	clan_id int UNSIGNED PRIMARY KEY, 
 	clan varchar(50)
 );
-/*  */
 
-/* table kekkeigenkais */
 CREATE TABLE kekkeigenkais (
 	kekkeigenkai_id int UNSIGNED PRIMARY KEY, 
 	kekkeigenkai varchar(50)
 );
-/*  */
 
-/* table characters */
 CREATE TABLE characters (
 	character_id int UNSIGNED PRIMARY KEY, 
 	name varchar(50),
 	image varchar(200) 
 );
-/*  */
 
-/* table village_x_character */
 CREATE TABLE village_x_character (
 	vxc_id int UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 	village_id int UNSIGNED, 
@@ -52,9 +34,7 @@ CREATE TABLE village_x_character (
 		ON DELETE SET NULL 
 		ON UPDATE CASCADE
 );
-/*  */
 
-/* table clan_x_character */
 CREATE TABLE clan_x_character (
 	cxc_id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	clan_id int UNSIGNED,
@@ -66,9 +46,7 @@ CREATE TABLE clan_x_character (
 		ON DELETE SET NULL 
 		ON UPDATE CASCADE
 );
-/*  */
 
-/* table kekkeigenkai_x_character */
 CREATE TABLE kekkeigenkai_x_character (
 	kxc_id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	kekkeigenkai_id int UNSIGNED,
@@ -80,9 +58,7 @@ CREATE TABLE kekkeigenkai_x_character (
 		ON DELETE SET NULL 
 		ON UPDATE CASCADE
 );
-/*  */
 
-/* view_characters */
 CREATE OR REPLACE VIEW view_characters AS 
     SELECT 
         c.character_id,
@@ -127,4 +103,3 @@ CREATE OR REPLACE VIEW view_characters AS
         c.character_id, c.name, c.image
     ORDER BY
         c.character_id;
-/*  */
