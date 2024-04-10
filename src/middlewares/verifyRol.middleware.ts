@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { findUserById } from '../modules/auth/models/findUserById.model';
 import { LICENSE } from '../libs/licenses.libs';
 import { METHODS } from '../libs/methods.libs';
-import { messages } from '../libs/messages.libs';
+import { MESSAGES } from '../libs/messages.libs';
 
 export const verifyRol = async (
   req: Request,
@@ -24,8 +24,10 @@ export const verifyRol = async (
     else
       return res
         .status(401)
-        .json({ res: false, message: messages.unauthorized });
+        .json({ res: false, message: MESSAGES.auth.unauthorized });
   } catch (error) {
-    return res.status(401).json({ res: false, message: messages.unauthorized });
+    return res
+      .status(401)
+      .json({ res: false, message: MESSAGES.auth.unauthorized });
   }
 };

@@ -1,4 +1,4 @@
-export const queries = {
+export const QUERIES = {
   insertVillage: 'INSERT INTO villages (village_id, village) VALUES (?, ?);',
   selectAllVillage: 'SELECT * FROM villages;',
   selectVillageByIdOrName:

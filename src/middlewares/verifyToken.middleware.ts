@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import config from '../config/config';
 import { findUserById } from '../modules/auth/models/findUserById.model';
-import { messages } from '../libs/messages.libs';
+import { MESSAGES } from '../libs/messages.libs';
 
 declare module 'express-serve-static-core' {
   interface Request {
@@ -21,12 +21,14 @@ export const verifyToken = async (
         : undefined;
 
     if (!token)
-      return res.status(403).json({ res: false, message: messages.notToken });
+      return res
+        .status(403)
+        .json({ res: false, message: MESSAGES.auth.notToken });
 
     if (!config.secret)
       return res
         .status(403)
-        .json({ res: false, message: messages.secretWordNotExist });
+        .json({ res: false, message: MESSAGES.server.secretWordNotExist });
 
     const secret = config.secret;
 
@@ -42,10 +44,12 @@ export const verifyToken = async (
     if (existUser && existUser[0].length === 0)
       return res
         .status(404)
-        .json({ res: false, message: messages.usernameNotFound });
+        .json({ res: false, message: MESSAGES.auth.usernameNotFound });
 
     next();
   } catch (error) {
-    return res.status(401).json({ res: false, message: messages.unauthorized });
+    return res
+      .status(401)
+      .json({ res: false, message: MESSAGES.auth.unauthorized });
   }
 };

@@ -1,11 +1,11 @@
 import { FieldPacket, RowDataPacket } from 'mysql2';
 import { getConnection } from '../../../database/script/connection/connection';
-import { queries } from '../queries/queries';
+import { QUERIES } from '../libs/queries';
 
 export const findVillageByMaxId = async () => {
   const connection = await getConnection();
   const result: [RowDataPacket[], FieldPacket[]] = await connection.query(
-    queries.selectVillageByMaxId,
+    QUERIES.selectVillageByMaxId,
   );
   return result;
 };

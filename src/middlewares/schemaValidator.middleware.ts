@@ -1,6 +1,6 @@
 import { AnyZodObject, ZodError } from 'zod';
 import { Request, Response, NextFunction } from 'express';
-import { messages } from '../libs/messages.libs';
+import { MESSAGES } from '../libs/messages.libs';
 
 export const schemaValidator =
   (schema: AnyZodObject) =>
@@ -16,6 +16,6 @@ export const schemaValidator =
       }
       return res
         .status(500)
-        .json({ res: false, message: messages.serverError });
+        .json({ res: false, message: MESSAGES.server.serverError });
     }
   };

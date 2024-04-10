@@ -1,10 +1,15 @@
-import { methods } from '../models/methods.model';
+import { MODELS } from '../models/models';
+import { MESSAGES } from '../../../libs/messages.libs';
+import { Response } from '../types/response.type';
 
 export const readAllVillage = async () => {
-  const existingVillage = await methods.findAllVillage();
-  if (existingVillage[0].length > 0) {
-    return { exists: true, result: existingVillage[0] };
+  const dataVillages = await MODELS.findAllVillage();
+  const response: Response = { procced: false };
+  if (dataVillages[0].length > 0) {
+    response.procced = true;
+    response.data = [dataVillages[0]];
   } else {
-    return { exists: false };
+    response.message = MESSAGES.database.notFoundRecords;
   }
+  return response;
 };

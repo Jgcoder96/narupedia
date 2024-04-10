@@ -4,7 +4,7 @@ import { readVillage } from './readVillage.service';
 import { updateVillage } from './updateVillage.service';
 import { deleteVillage } from './deleteVillage.service';
 
-export const methods = {
+export const SERVICES = {
   createVillage,
   readAllVillage,
   readVillage,

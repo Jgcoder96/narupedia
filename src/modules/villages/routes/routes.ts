@@ -1,8 +1,6 @@
 import { Router } from 'express';
-import { methods } from '../controllers/methods.controllers';
+import { CONTROLLERS } from '../controllers/controllers';
 import { postVillageSchema } from '../schema/postVillage.schema';
-import { putVillageSchema } from '../schema/putVillage.schema';
-import { deleteVillageSchema } from '../schema/deleteVillage.schema';
 import { MIDDLEWARES } from '../../../middlewares/middlewares';
 
 export const routerVillages = Router();
@@ -10,25 +8,41 @@ export const routerVillages = Router();
 routerVillages.get(
   '/',
   [MIDDLEWARES.verifyToken, MIDDLEWARES.verifyRol],
-  methods.getAllVillage,
+  CONTROLLERS.getAllVillage,
 );
 
-routerVillages.get('/:id', methods.getVillage);
+routerVillages.get(
+  '/:id',
+  [MIDDLEWARES.verifyToken, MIDDLEWARES.verifyRol],
+  CONTROLLERS.getVillage,
+);
 
 routerVillages.post(
   '/',
-  MIDDLEWARES.schemaValidator(postVillageSchema),
-  methods.postVillage,
+  [
+    MIDDLEWARES.schemaValidator(postVillageSchema),
+    MIDDLEWARES.verifyToken,
+    MIDDLEWARES.verifyRol,
+  ],
+  CONTROLLERS.postVillage,
 );
 
 routerVillages.put(
   '/',
-  MIDDLEWARES.schemaValidator(putVillageSchema),
-  methods.putVillage,
+  [
+    MIDDLEWARES.schemaValidator(postVillageSchema),
+    MIDDLEWARES.verifyToken,
+    MIDDLEWARES.verifyRol,
+  ],
+  CONTROLLERS.putVillage,
 );
 
 routerVillages.delete(
   '/',
-  MIDDLEWARES.schemaValidator(deleteVillageSchema),
-  methods.deleteVillage,
+  [
+    MIDDLEWARES.schemaValidator(postVillageSchema),
+    MIDDLEWARES.verifyToken,
+    MIDDLEWARES.verifyRol,
+  ],
+  CONTROLLERS.deleteVillage,
 );

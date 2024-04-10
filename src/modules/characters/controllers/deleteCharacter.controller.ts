@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { methods } from '../services/methods.service';
+import { MESSAGES } from '../../../libs/messages.libs';
 
 export const deleteCharacter = async (req: Request, res: Response) => {
   try {
@@ -10,17 +11,17 @@ export const deleteCharacter = async (req: Request, res: Response) => {
     if (!deleteResult.exists) {
       res.status(404).json({
         res: deleteResult.exists,
-        message: `not exists records that matches with id: ${id}`,
+        message: MESSAGES.database.NotExistRecord,
       });
     } else {
       res.json({
         res: true,
-        message: `id: ${id} delete successfully`,
+        message: MESSAGES.database.recordDeleted,
         info: deleteResult.result,
       });
     }
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: 'Internal Server Error' });
+    return res.status(500).json({ error: MESSAGES.server.serverError });
   }
 };

@@ -8,7 +8,7 @@ import { findVillageByName } from './findVillageByName.model';
 import { updateVillage } from './updateVillage.model';
 import { deleteVillage } from './deleteVillage.model';
 
-export const methods = {
+export const MODELS = {
   insertVillage,
   findAllVillage,
   findVillageById,

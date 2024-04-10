@@ -1,6 +1,6 @@
 import { FieldPacket, RowDataPacket } from 'mysql2';
 import { getConnection } from '../../../database/script/connection/connection';
-import { queries } from '../lib/queries';
+import { QUERIES } from '../lib/queries';
 
 export const insertUser = async (
   username: string,
@@ -9,7 +9,7 @@ export const insertUser = async (
 ) => {
   const connection = await getConnection();
   const result: [RowDataPacket[], FieldPacket[]] = await connection.query(
-    queries.insertUser,
+    QUERIES.insertUser,
     [username, email, password],
   );
   return result;

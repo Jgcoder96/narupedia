@@ -1,4 +1,4 @@
-export const queries = {
+export const QUERIES = {
   insertUser:
     'INSERT INTO users (user_id, username, email, password) VALUES (UUID(),?, ?, ?);',
   insertRol:

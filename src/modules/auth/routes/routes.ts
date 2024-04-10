@@ -1,7 +1,17 @@
 import { Router } from 'express';
-import { methods } from '../controllers/methods.controller';
+import { CONTROLLERS } from '../controllers/controllers';
+import { MIDDLEWARES } from '../../../middlewares/middlewares';
+import { SCHEMAS } from '../schemas/schemas';
 
 export const routerAuth = Router();
 
-routerAuth.post('/signin', methods.signIn);
-routerAuth.post('/signup', methods.signUp);
+routerAuth.post(
+  '/signin',
+  MIDDLEWARES.schemaValidator(SCHEMAS.signIn),
+  CONTROLLERS.signIn,
+);
+routerAuth.post(
+  '/signup',
+  MIDDLEWARES.schemaValidator(SCHEMAS.signUp),
+  CONTROLLERS.signUp,
+);

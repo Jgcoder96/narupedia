@@ -1,7 +1,7 @@
 import { signUp } from './signUp.controller';
 import { signIn } from './signIn.controller';
 
-export const methods = {
+export const CONTROLLERS = {
   signUp,
   signIn,
 };
