@@ -1,4 +1,4 @@
-export const queries = {
+export const QUERIES = {
   insertKekkeigenkai:
     'INSERT INTO kekkeigenkais (kekkeigenkai_id, kekkeigenkai) VALUES (?, ?);',
   selectAllKekkeigenkai: 'SELECT * FROM kekkeigenkais;',

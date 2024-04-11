@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { CONTROLLERS } from '../controllers/controllers';
-import { postVillageSchema } from '../schema/postVillage.schema';
 import { MIDDLEWARES } from '../../../middlewares/middlewares';
+import { SCHEMAS } from '../schema/schema';
 
 export const routerVillages = Router();
 
@@ -20,7 +20,7 @@ routerVillages.get(
 routerVillages.post(
   '/',
   [
-    MIDDLEWARES.schemaValidator(postVillageSchema),
+    MIDDLEWARES.schemaValidator(SCHEMAS.postVillage),
     MIDDLEWARES.verifyToken,
     MIDDLEWARES.verifyRol,
   ],
@@ -30,7 +30,7 @@ routerVillages.post(
 routerVillages.put(
   '/',
   [
-    MIDDLEWARES.schemaValidator(postVillageSchema),
+    MIDDLEWARES.schemaValidator(SCHEMAS.putVillage),
     MIDDLEWARES.verifyToken,
     MIDDLEWARES.verifyRol,
   ],
@@ -40,7 +40,7 @@ routerVillages.put(
 routerVillages.delete(
   '/',
   [
-    MIDDLEWARES.schemaValidator(postVillageSchema),
+    MIDDLEWARES.schemaValidator(SCHEMAS.deleteVillage),
     MIDDLEWARES.verifyToken,
     MIDDLEWARES.verifyRol,
   ],

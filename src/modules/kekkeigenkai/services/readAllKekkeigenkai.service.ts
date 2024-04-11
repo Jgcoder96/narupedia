@@ -1,10 +1,15 @@
-import { methods } from '../models/methods.model';
+import { MODELS } from '../models/models';
+import { Response } from '../types/response.type';
+import { MESSAGES } from '../../../libs/messages.libs';
 
 export const readAllKekkeigenkai = async () => {
-  const existingkekkeigenkai = await methods.findAllKekkeigenkai();
-  if (existingkekkeigenkai[0].length > 0) {
-    return { exists: true, result: existingkekkeigenkai[0] };
+  const response: Response = { procced: false };
+  const existKekkeigenkai = await MODELS.findAllKekkeigenkai();
+  if (existKekkeigenkai[0].length > 0) {
+    response.procced = true;
+    response.data = [existKekkeigenkai[0]];
   } else {
-    return { exists: false };
+    response.message = MESSAGES.database.NotExistRecord;
   }
+  return response;
 };

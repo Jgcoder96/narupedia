@@ -20,7 +20,7 @@ export const verifyRol = async (
     if (method === METHODS.get && LICENSE.GET.includes(role)) next();
     else if (method === METHODS.post && LICENSE.POST.includes(role)) next();
     else if (method === METHODS.put && LICENSE.PUT.includes(role)) next();
-    else if (method === METHODS.delete && LICENSE.DELETE.includes(role)) next;
+    else if (method === METHODS.delete && LICENSE.DELETE.includes(role)) next();
     else
       return res
         .status(401)

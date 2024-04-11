@@ -7,7 +7,7 @@ import { insertKekkeigenkai } from './insertKekkeigenkai.model';
 import { updateKekkeigenkai } from './updateKekkeigenkai.model';
 import { deleteKekkeigenkai } from './deleteKekkeigenkai.model';
 
-export const methods = {
+export const MODELS = {
   insertKekkeigenkai,
   findAllKekkeigenkai,
   findKekkeigenkaiById,

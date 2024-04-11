@@ -1,14 +1,18 @@
-import { methods } from '../models/methods.model';
+import { MODELS } from '../models/models';
+import { MESSAGES } from '../../../libs/messages.libs';
+import { Response } from '../types/response.type';
 
 export const createKekkeigenkai = async (kekkeigenkai: string) => {
-  const maxIdKekkeigenkai = await methods.findKekkeigenkaiByMaxId();
-  const existingKekkeigenkai =
-    await methods.findKekkeigenkaiByName(kekkeigenkai);
-  if (existingKekkeigenkai[0].length > 0) {
-    return { exists: true, record: existingKekkeigenkai[0] };
+  const response: Response = { procced: false };
+  const maxIdKekkeigenkai = await MODELS.findKekkeigenkaiByMaxId(),
+    existKekkeigenkai = await MODELS.findKekkeigenkaiByName(kekkeigenkai);
+  if (existKekkeigenkai[0].length > 0) {
+    response.message = MESSAGES.database.Existsrecord;
   } else {
-    const id = maxIdKekkeigenkai[0][0]['maxId'] + 1;
-    const result = await methods.insertKekkeigenkai(id, kekkeigenkai);
-    return { exists: false, result };
+    const maxId = maxIdKekkeigenkai[0][0].maxId + 1;
+    await MODELS.insertKekkeigenkai(maxId, kekkeigenkai);
+    response.procced = true;
+    response.message = MESSAGES.database.recordCreated;
   }
+  return response;
 };

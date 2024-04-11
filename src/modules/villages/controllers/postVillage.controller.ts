@@ -12,7 +12,7 @@ export const postVillage = async (req: Request, res: Response) => {
         message: result.message,
       });
     } else {
-      res.status(400).json({
+      res.status(409).json({
         res: result.procced,
         message: result.message,
       });

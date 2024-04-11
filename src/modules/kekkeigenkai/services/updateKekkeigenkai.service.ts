@@ -1,11 +1,16 @@
-import { methods } from '../models/methods.model';
+import { MESSAGES } from '../../../libs/messages.libs';
+import { MODELS } from '../models/models';
+import { Response } from '../types/response.type';
 
 export const updateKekkeigenkai = async (id: number, kekkeigenkai: string) => {
-  const existingKekkeigenkai = await methods.findKekkeigenkaiById(id);
-  if (existingKekkeigenkai[0].length > 0) {
-    const result = await methods.updateKekkeigenkai(id, kekkeigenkai);
-    return { exists: true, result };
+  const response: Response = { procced: false };
+  const existKekkeigenkai = await MODELS.findKekkeigenkaiById(id);
+  if (existKekkeigenkai[0].length > 0) {
+    response.procced = true;
+    response.message = MESSAGES.database.recordUpdate;
+    await MODELS.updateKekkeigenkai(id, kekkeigenkai);
   } else {
-    return { exists: false };
+    response.message = MESSAGES.database.NotExistRecord;
   }
+  return response;
 };

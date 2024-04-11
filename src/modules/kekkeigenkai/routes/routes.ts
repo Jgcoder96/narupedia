@@ -1,26 +1,48 @@
 import { Router } from 'express';
-import { methods } from '../controllers/methods.controller';
-import { schemaValidator } from '../../../middlewares/schemaValidator.middleware';
-import { postKekkeigenkaiSchema } from '../schema/postKekkeigenkai.schema';
-import { putKekkeigenkaiSchema } from '../schema/putKekkeigenkai.schema';
-import { deleteKekkeigenkaiSchema } from '../schema/deleteKekkeigenkai.schema';
+import { CONTROLLERS } from '../controllers/controllers';
+import { MIDDLEWARES } from '../../../middlewares/middlewares';
+import { SCHEMAS } from '../schema/schema';
 
 export const routerKekkeigenkai = Router();
 
+routerKekkeigenkai.get(
+  '/',
+  [MIDDLEWARES.verifyToken, MIDDLEWARES.verifyRol],
+  CONTROLLERS.getAllKekkeigenkai,
+);
+
+routerKekkeigenkai.get(
+  '/:id',
+  [MIDDLEWARES.verifyToken, MIDDLEWARES.verifyRol],
+  CONTROLLERS.getKekkeigenkai,
+);
+
 routerKekkeigenkai.post(
   '/',
-  schemaValidator(postKekkeigenkaiSchema),
-  methods.postKekkeigenkai,
+  [
+    MIDDLEWARES.schemaValidator(SCHEMAS.postKekkeigenkai),
+    MIDDLEWARES.verifyToken,
+    MIDDLEWARES.verifyRol,
+  ],
+  CONTROLLERS.postKekkeigenkai,
 );
-routerKekkeigenkai.get('/', methods.getAllKekkeigenkai);
-routerKekkeigenkai.get('/:id', methods.getKekkeigenkai);
+
 routerKekkeigenkai.put(
   '/',
-  schemaValidator(putKekkeigenkaiSchema),
-  methods.putKekkeigenkai,
+  [
+    MIDDLEWARES.schemaValidator(SCHEMAS.putKekkeigenkai),
+    MIDDLEWARES.verifyToken,
+    MIDDLEWARES.verifyRol,
+  ],
+  CONTROLLERS.putKekkeigenkai,
 );
+
 routerKekkeigenkai.delete(
   '/',
-  schemaValidator(deleteKekkeigenkaiSchema),
-  methods.deleteKekkeigenkai,
+  [
+    MIDDLEWARES.schemaValidator(SCHEMAS.deleteKekkeigenkai),
+    MIDDLEWARES.verifyToken,
+    MIDDLEWARES.verifyRol,
+  ],
+  CONTROLLERS.deleteKekkeigenkai,
 );

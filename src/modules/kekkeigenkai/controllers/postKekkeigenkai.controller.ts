@@ -1,26 +1,25 @@
 import { Request, Response } from 'express';
-import { methods } from '../services/methods.service';
+import { SERVICES } from '../services/services';
+import { MESSAGES } from '../../../libs/messages.libs';
 
 export const postKekkeigenkai = async (req: Request, res: Response) => {
   try {
     const { kekkeigenkai } = req.body;
-    const creationResult = await methods.createKekkeigenkai(kekkeigenkai);
+    const result = await SERVICES.createKekkeigenkai(kekkeigenkai);
 
-    if (creationResult.exists) {
-      res.json({
-        res: false,
-        message: `kekkeigenkai: ${kekkeigenkai} exists in the database`,
-        record: creationResult.record,
+    if (result.procced) {
+      res.status(201).json({
+        res: result.procced,
+        message: result.message,
       });
     } else {
-      res.json({
-        res: true,
-        message: `kekkeigenkai: ${kekkeigenkai} was inserted correctly`,
-        info: creationResult.result,
+      res.status(409).json({
+        res: result.procced,
+        message: result.message,
       });
     }
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: 'Internal Server Error' });
+    return res.status(500).json({ error: MESSAGES.server.serverError });
   }
 };

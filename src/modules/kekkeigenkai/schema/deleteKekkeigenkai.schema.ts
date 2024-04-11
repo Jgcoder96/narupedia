@@ -1,5 +1,5 @@
 import { z } from 'zod';
 
-export const deleteKekkeigenkaiSchema = z.object({
+export const deleteKekkeigenkai = z.object({
   id: z.number().nonnegative(),
 });

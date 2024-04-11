@@ -4,7 +4,7 @@ import { getKekkeigenkai } from './getKekkeigenkai.controller';
 import { putKekkeigenkai } from './putKekkeigenkai.controller';
 import { deleteKekkeigenkai } from './deleteKekkeigenkai.controller';
 
-export const methods = {
+export const CONTROLLERS = {
   postKekkeigenkai,
   getKekkeigenkai,
   getAllKekkeigenkai,

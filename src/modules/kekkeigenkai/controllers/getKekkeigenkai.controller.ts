@@ -1,37 +1,32 @@
 import { Request, Response } from 'express';
-import { methods } from '../services/methods.service';
+import { SERVICES } from '../services/services';
 import { convertStringToJSON } from '../../../utils/convertStringToJSON';
+import { MESSAGES } from '../../../libs/messages.libs';
 
 export const getKekkeigenkai = async (req: Request, res: Response) => {
   try {
     const kekkeigenkai_id = parseInt(req.params.id);
-    const readResult = await methods.readKekkeigenkai(kekkeigenkai_id);
+    const result = await SERVICES.readKekkeigenkai(kekkeigenkai_id);
 
-    if (
-      readResult.exists &&
-      readResult.resultKekkeigenkai &&
-      readResult.resultCharacter
-    ) {
+    if (result.procced && result.data) {
       convertStringToJSON(
-        readResult.resultCharacter[0],
+        result.data[1],
         'villages',
         'clans',
         'kekkeigenkais',
         'images',
       );
-      return res.json({
-        kekkeigenkai_id: readResult.resultKekkeigenkai[0][0]['kekkeigenkai_id'],
-        name: readResult.resultKekkeigenkai[0][0]['kekkeigenkai'],
-        characters: readResult.resultCharacter[0],
+      return res.status(200).json({
+        id: result.data[0][0].kekkeigenkai_id,
+        name: result.data[0][0].kekkeigenkai,
+        characters: result.data[1],
       });
     } else {
-      return res.json({
-        message: 'not found records to data base',
-      });
+      res.status(404).json({ res: result.procced, message: result.message });
     }
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: 'Internal Server Error' });
+    return res.status(500).json({ error: MESSAGES.server.serverError });
   }
 };
 /*  */

@@ -1,5 +1,5 @@
 import { z } from 'zod';
 
-export const deleteVillageSchema = z.object({
+export const deleteVillage = z.object({
   id: z.number().nonnegative(),
 });

@@ -4,7 +4,7 @@ import { createKekkeigenkai } from './createKekkeigenkai.service';
 import { updateKekkeigenkai } from './updateKekkeigenkai.service';
 import { deleteKekkeigenkai } from './deleteKekkeigenkai.service';
 
-export const methods = {
+export const SERVICES = {
   createKekkeigenkai,
   readAllKekkeigenkai,
   readKekkeigenkai,
