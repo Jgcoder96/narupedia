@@ -1,28 +1,48 @@
 import { Router } from 'express';
-import { methods } from '../controllers/methods.controller';
-import { schemaValidator } from '../../../middlewares/schemaValidator.middleware';
-import { postCharacterSchema } from '../schema/postCharacter.schema';
-import { putCharacterSchema } from '../schema/putCharacter.schema';
-import { deleteCharacterSchema } from '../schema/deleteCharacter.schema';
+import { CONTROLLERS } from '../controllers/controllers';
+import { SCHEMAS } from '../schema/schema';
+import { MIDDLEWARES } from '../../../middlewares/middlewares';
 
-/* router */
 export const routerCharacters = Router();
 
-/* routes characters */
+routerCharacters.get(
+  '/',
+  [MIDDLEWARES.verifyToken, MIDDLEWARES.verifyRol],
+  CONTROLLERS.getAllCharacter,
+);
+
+routerCharacters.get(
+  '/:id',
+  [MIDDLEWARES.verifyToken, MIDDLEWARES.verifyRol],
+  CONTROLLERS.getCharacter,
+);
+
 routerCharacters.post(
   '/',
-  schemaValidator(postCharacterSchema),
-  methods.postCharacter,
+  [
+    MIDDLEWARES.schemaValidator(SCHEMAS.postCharacter),
+    MIDDLEWARES.verifyToken,
+    MIDDLEWARES.verifyRol,
+  ],
+  CONTROLLERS.postCharacter,
 );
-routerCharacters.get('/', methods.getAllCharacter);
-routerCharacters.get('/:id', methods.getCharacter);
+
 routerCharacters.put(
   '/',
-  schemaValidator(putCharacterSchema),
-  methods.putCharacter,
+  [
+    MIDDLEWARES.schemaValidator(SCHEMAS.putCharacter),
+    MIDDLEWARES.verifyToken,
+    MIDDLEWARES.verifyRol,
+  ],
+  CONTROLLERS.putCharacter,
 );
+
 routerCharacters.delete(
   '/',
-  schemaValidator(deleteCharacterSchema),
-  methods.deleteCharacter,
+  [
+    MIDDLEWARES.schemaValidator(SCHEMAS.deleteCharacter),
+    MIDDLEWARES.verifyToken,
+    MIDDLEWARES.verifyRol,
+  ],
+  CONTROLLERS.deleteCharacter,
 );

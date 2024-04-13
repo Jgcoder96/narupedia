@@ -4,7 +4,7 @@ import { getCharacter } from './getCharacter.controller';
 import { putCharacter } from './putCharacter.controller';
 import { deleteCharacter } from './deleteCharacter.controller';
 
-export const methods = {
+export const CONTROLLERS = {
   postCharacter,
   getCharacter,
   getAllCharacter,

@@ -1,15 +1,16 @@
-import { methods } from '../models/methods.model';
+import { MODELS } from '../models/models';
+import { Response } from '../types/response.type';
+import { MESSAGES } from '../../../libs/messages.libs';
 
-export const updateCharacter = async (
-  id: number,
-  character: string,
-  image: string,
-) => {
-  const existingCharacter = await methods.findCharacterById(id);
-  if (existingCharacter[0].length > 0) {
-    const result = await methods.updateCharacter(id, character, image);
-    return { exists: true, result };
+export const updateCharacter = async (id: number, character: string) => {
+  const response: Response = { procced: false };
+  const existCharacter = await MODELS.findCharacterById(id);
+  if (existCharacter[0].length > 0) {
+    await MODELS.updateCharacter(id, character);
+    response.procced = true;
+    response.message = MESSAGES.database.recordUpdate;
   } else {
-    return { exists: false };
+    response.message = MESSAGES.database.NotExistRecord;
   }
+  return response;
 };

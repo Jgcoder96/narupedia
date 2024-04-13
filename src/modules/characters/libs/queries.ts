@@ -1,6 +1,5 @@
 export const queries = {
-  insertCharacter:
-    'INSERT INTO characters (character_id, name, image) VALUES (?, ?, ?);',
+  insertCharacter: 'INSERT INTO characters (character_id, name) VALUES (?, ?);',
   selectAllCharacter: 'SELECT * FROM view_characters;',
   selectCharacterById: 'SELECT * FROM view_characters WHERE character_id = ?;',
   selectAllCharacterWithPageAndLimit:
@@ -8,7 +7,6 @@ export const queries = {
   selectCharacterByMaxId: 'SELECT MAX(character_id) AS maxId FROM characters;',
   selectCharacterByName: 'SELECT * FROM characters WHERE name = ?;',
   countOfCharacter: 'SELECT COUNT(*) AS pages FROM view_characters;',
-  updateCharacter:
-    'UPDATE characters SET name = ?, image = ? WHERE character_id = ?;',
+  updateCharacter: 'UPDATE characters SET name = ? WHERE character_id = ?;',
   deleteCharacter: 'DELETE FROM characters WHERE character_id = ?;',
 };

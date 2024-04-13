@@ -1,6 +1,6 @@
 import { FieldPacket, RowDataPacket } from 'mysql2';
 import { getConnection } from '../../../database/script/connection/connection';
-import { queries } from '../queries/queries';
+import { queries } from '../libs/queries';
 
 export const deleteCharacter = async (id: number) => {
   const connection = await getConnection();

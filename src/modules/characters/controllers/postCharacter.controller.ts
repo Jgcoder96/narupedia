@@ -1,26 +1,25 @@
 import { Request, Response } from 'express';
-import { methods } from '../services/methods.service';
+import { SERVICES } from '../services/services';
+import { MESSAGES } from '../../../libs/messages.libs';
 
 export const postCharacter = async (req: Request, res: Response) => {
   try {
-    const { character, image } = req.body;
-    const creationResult = await methods.createCharacter(character, image);
+    const { character } = req.body;
+    const result = await SERVICES.createCharacter(character);
 
-    if (creationResult.exists) {
-      res.json({
-        res: false,
-        message: `character: ${character} exists in the database`,
-        record: creationResult.record,
+    if (result.procced) {
+      res.status(201).json({
+        res: result.procced,
+        message: result.message,
       });
     } else {
-      res.json({
-        res: true,
-        message: `character: ${character} was inserted correctly`,
-        info: creationResult.result,
+      res.status(409).json({
+        res: result.procced,
+        message: result.message,
       });
     }
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: 'Internal Server Error' });
+    return res.status(500).json({ error: MESSAGES.server.serverError });
   }
 };

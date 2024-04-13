@@ -5,7 +5,7 @@ import { createCharacter } from './createCharacter.service';
 import { updateCharacter } from './updateCharacter.service';
 import { deleteCharacter } from './deleteCharacter.service';
 
-export const methods = {
+export const SERVICES = {
   createCharacter,
   readCharacter,
   readAllCharacterWithPage,

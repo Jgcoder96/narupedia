@@ -1,15 +1,16 @@
-import { methods } from '../models/methods.model';
+import { MODELS } from '../models/models';
+import { MESSAGES } from '../../../libs/messages.libs';
+import { Response } from '../types/response.type';
 
 export const readAllCharacter = async () => {
-  const existingCharacters = await methods.findAllCharacter();
-  const countCharacters = await methods.countOfCharacter();
-  if (existingCharacters[0].length > 0 && countCharacters[0].length > 0) {
-    return {
-      exists: true,
-      countCharacter: countCharacters,
-      resultCharacter: existingCharacters,
-    };
+  const response: Response = { procced: false };
+  const existCharacters = await MODELS.findAllCharacter(),
+    countCharacters = await MODELS.countOfCharacter();
+  if (existCharacters[0].length > 0 && countCharacters[0].length > 0) {
+    response.procced = true;
+    response.data = [existCharacters[0], countCharacters[0]];
   } else {
-    return { exists: false };
+    response.message = MESSAGES.database.notFoundRecords;
   }
+  return response;
 };

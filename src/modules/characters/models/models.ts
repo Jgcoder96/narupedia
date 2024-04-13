@@ -8,7 +8,7 @@ import { findCharacterByName } from './findCharacterByName.model';
 import { updateCharacter } from './updateCharacter.model';
 import { deleteCharacter } from './deleteCharacter.model';
 
-export const methods = {
+export const MODELS = {
   insertCharacter,
   countOfCharacter,
   findCharacterById,

@@ -1,23 +1,22 @@
 import { Request, Response } from 'express';
-import { methods } from '../services/methods.service';
+import { SERVICES } from '../services/services';
 import { MESSAGES } from '../../../libs/messages.libs';
 
 export const deleteCharacter = async (req: Request, res: Response) => {
   try {
     const { id } = req.body;
 
-    const deleteResult = await methods.deleteCharacter(id);
+    const result = await SERVICES.deleteCharacter(id);
 
-    if (!deleteResult.exists) {
-      res.status(404).json({
-        res: deleteResult.exists,
-        message: MESSAGES.database.NotExistRecord,
+    if (result.procced) {
+      res.status(200).json({
+        res: result.procced,
+        message: result.message,
       });
     } else {
-      res.json({
-        res: true,
-        message: MESSAGES.database.recordDeleted,
-        info: deleteResult.result,
+      res.status(404).json({
+        res: result.procced,
+        message: result.message,
       });
     }
   } catch (error) {
