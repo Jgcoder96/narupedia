@@ -1,5 +1,5 @@
 import { z } from 'zod';
 
-export const deleteClanSchema = z.object({
+export const deleteClan = z.object({
   id: z.number().nonnegative(),
 });

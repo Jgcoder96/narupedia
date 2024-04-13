@@ -1,11 +1,16 @@
-import { methods } from '../models/methods.model';
+import { MODELS } from '../models/models';
+import { MESSAGES } from '../../../libs/messages.libs';
+import { Response } from '../types/response.type';
 
 export const deleteClan = async (id: number) => {
-  const existingClan = await methods.findClanById(id);
-  if (existingClan[0].length > 0) {
-    const result = await methods.deleteClan(id);
-    return { exists: true, result };
+  const response: Response = { procced: false };
+  const existClan = await MODELS.findClanById(id);
+  if (existClan[0].length > 0) {
+    response.procced = true;
+    response.message = MESSAGES.database.recordDeleted;
+    await MODELS.deleteClan(id);
   } else {
-    return { exists: false };
+    response.message = MESSAGES.database.NotExistRecord;
   }
+  return response;
 };

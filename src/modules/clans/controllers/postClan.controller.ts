@@ -1,25 +1,24 @@
 import { Request, Response } from 'express';
-import { methods } from '../services/methods.service';
+import { SERVICES } from '../services/services';
+import { MESSAGES } from '../../../libs/messages.libs';
 
 export const postClan = async (req: Request, res: Response) => {
   try {
     const { clan } = req.body;
-    const creationResult = await methods.createClan(clan);
-    if (creationResult.exists) {
-      res.json({
-        res: false,
-        message: `clan: ${clan} exists in the database`,
-        record: creationResult.record,
+    const result = await SERVICES.createClan(clan);
+    if (result.procced) {
+      res.status(201).json({
+        res: result.procced,
+        message: result.message,
       });
     } else {
-      res.json({
-        res: true,
-        message: `clan: ${clan} was inserted correctly`,
-        info: creationResult.result,
+      res.status(409).json({
+        res: result.procced,
+        message: result.message,
       });
     }
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: 'Internal Server Error' });
+    return res.status(500).json({ error: MESSAGES.server.serverError });
   }
 };

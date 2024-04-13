@@ -17,6 +17,7 @@ export const getKekkeigenkai = async (req: Request, res: Response) => {
         'images',
       );
       return res.status(200).json({
+        res: result.procced,
         id: result.data[0][0].kekkeigenkai_id,
         name: result.data[0][0].kekkeigenkai,
         characters: result.data[1],

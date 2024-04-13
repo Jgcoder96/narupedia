@@ -1,14 +1,46 @@
 import { Router } from 'express';
 import { methods } from '../controllers/methods.controller';
-import { schemaValidator } from '../../../middlewares/schemaValidator.middleware';
-import { postClanSchema } from '../schema/postClan.schema';
-import { putClanSchema } from '../schema/putClan.schema';
-import { deleteClanSchema } from '../schema/deleteClansSchema';
+import { SCHEMAS } from '../schema/schemas';
+import { MIDDLEWARES } from '../../../middlewares/middlewares';
 
 export const routerClans = Router();
 
-routerClans.get('/', methods.getAllClan);
-routerClans.get('/:id', methods.getClan);
-routerClans.post('/', schemaValidator(postClanSchema), methods.postClan);
-routerClans.put('/', schemaValidator(putClanSchema), methods.putClan);
-routerClans.delete('/', schemaValidator(deleteClanSchema), methods.deleteClan);
+routerClans.get(
+  '/',
+  [MIDDLEWARES.verifyToken, MIDDLEWARES.verifyRol],
+  methods.getAllClan,
+);
+
+routerClans.get(
+  '/:id',
+  [MIDDLEWARES.verifyToken, MIDDLEWARES.verifyRol],
+  methods.getClan,
+);
+
+routerClans.post(
+  '/',
+  [
+    MIDDLEWARES.schemaValidator(SCHEMAS.postClan),
+    MIDDLEWARES.verifyToken,
+    MIDDLEWARES.verifyRol,
+  ],
+  methods.postClan,
+);
+routerClans.put(
+  '/',
+  [
+    MIDDLEWARES.schemaValidator(SCHEMAS.putClan),
+    MIDDLEWARES.verifyToken,
+    MIDDLEWARES.verifyRol,
+  ],
+  methods.putClan,
+);
+routerClans.delete(
+  '/',
+  [
+    MIDDLEWARES.schemaValidator(SCHEMAS.deleteClan),
+    MIDDLEWARES.verifyToken,
+    MIDDLEWARES.verifyRol,
+  ],
+  methods.deleteClan,
+);

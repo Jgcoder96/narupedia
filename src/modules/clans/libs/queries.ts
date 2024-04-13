@@ -1,4 +1,4 @@
-export const queries = {
+export const QUERIES = {
   insertClan: 'INSERT INTO clans (clan_id, clan) VALUES (?, ?);',
   selectAllClan: 'SELECT * FROM clans;',
   selectClanById: 'SELECT * FROM clans WHERE clan_id = ?;',

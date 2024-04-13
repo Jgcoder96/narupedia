@@ -7,7 +7,7 @@ import { findClanByName } from './findClanByName.model';
 import { updateClan } from './updateClan.model';
 import { deleteClan } from './deleteClan.model';
 
-export const methods = {
+export const MODELS = {
   insertClan,
   findAllClan,
   findClanById,

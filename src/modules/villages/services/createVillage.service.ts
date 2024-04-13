@@ -9,7 +9,6 @@ export const createVillage = async (village: string) => {
 
   if (existVillage[0].length > 0) {
     response.procced = false;
-    response.data = [existVillage[0]];
     response.message = MESSAGES.database.Existsrecord;
   } else {
     const id = maxIdVillage[0][0].maxId + 1;

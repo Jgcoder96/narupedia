@@ -1,11 +1,11 @@
 import { FieldPacket, RowDataPacket } from 'mysql2';
 import { getConnection } from '../../../database/script/connection/connection';
-import { queries } from '../queries/queries';
+import { QUERIES } from '../libs/queries';
 
 export const findClanByLikeId = async (id: number) => {
   const connection = await getConnection();
   const result: [RowDataPacket[], FieldPacket[]] = await connection.query(
-    queries.selectClanByLikeId,
+    QUERIES.selectClanByLikeId,
     [id],
   );
   return result;

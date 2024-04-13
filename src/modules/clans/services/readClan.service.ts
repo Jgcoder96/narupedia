@@ -1,15 +1,16 @@
-import { methods } from '../models/methods.model';
+import { MODELS } from '../models/models';
+import { MESSAGES } from '../../../libs/messages.libs';
+import { Response } from '../types/response.type';
 
 export const readClan = async (id: number) => {
-  const existingClan = await methods.findClanById(id),
-    existingCharacter = await methods.findClanByLikeId(id);
-  if (existingClan[0].length > 0 && existingCharacter[0].length > 0) {
-    return {
-      exists: true,
-      resultClan: existingClan,
-      resultCharacter: existingCharacter,
-    };
+  const response: Response = { procced: false };
+  const existClan = await MODELS.findClanById(id),
+    existCharacters = await MODELS.findClanByLikeId(id);
+  if (existClan[0].length > 0 && existCharacters[0].length > 0) {
+    response.procced = true;
+    response.data = [existClan[0], existCharacters[0]];
   } else {
-    return { exists: false };
+    response.message = MESSAGES.database.notFoundRecords;
   }
+  return response;
 };

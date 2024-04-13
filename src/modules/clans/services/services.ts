@@ -4,7 +4,7 @@ import { createClan } from './createClan.service';
 import { updateClan } from './updateClan.service';
 import { deleteClan } from './deleteClan.service';
 
-export const methods = {
+export const SERVICES = {
   createClan,
   readAllClan,
   readClan,

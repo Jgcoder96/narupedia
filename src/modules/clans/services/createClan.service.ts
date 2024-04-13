@@ -1,13 +1,18 @@
-import { methods } from '../models/methods.model';
+import { MODELS } from '../models/models';
+import { Response } from '../types/response.type';
+import { MESSAGES } from '../../../libs/messages.libs';
 
 export const createClan = async (clan: string) => {
-  const maxIdClan = await methods.findClanByMaxId();
-  const existingClan = await methods.findClanByName(clan);
-  if (existingClan[0].length > 0) {
-    return { exists: true, record: existingClan[0] };
+  const response: Response = { procced: false };
+  const maxIdClan = await MODELS.findClanByMaxId();
+  const existClan = await MODELS.findClanByName(clan);
+  if (existClan[0].length > 0) {
+    response.message = MESSAGES.database.Existsrecord;
   } else {
-    const id = maxIdClan[0][0]['maxId'] + 1;
-    const result = await methods.insertClan(id, clan);
-    return { exists: false, result };
+    const maxId = maxIdClan[0][0].maxId + 1;
+    await MODELS.insertClan(maxId, clan);
+    response.procced = true;
+    response.message = MESSAGES.database.recordCreated;
   }
+  return response;
 };
