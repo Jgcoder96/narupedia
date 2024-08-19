@@ -19,8 +19,16 @@ CREATE TABLE kekkeigenkais (
 
 CREATE TABLE characters (
 	character_id int UNSIGNED PRIMARY KEY, 
-	name varchar(50),
-	image varchar(200) 
+	name varchar(50)
+);
+
+CREATE TABLE image_x_character (
+    ixc_id int UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+    image varchar(200), 
+    character_id int UNSIGNED,
+    FOREIGN KEY (character_id) REFERENCES characters(character_id)
+        ON DELETE SET NULL 
+        ON UPDATE CASCADE
 );
 
 CREATE TABLE village_x_character (
@@ -63,34 +71,41 @@ CREATE OR REPLACE VIEW view_characters AS
     SELECT 
         c.character_id,
         c.name,
-        c.image,
         CONCAT(
-    		'[',
-    		GROUP_CONCAT(
-        		DISTINCT CONCAT('{"id": "', v.village_id, '", "name": "', v.village, '"}')
-        		ORDER BY v.village 
-        		SEPARATOR ', '
-   			),
-    		']'
-		) AS villages,
-		CONCAT(
-			'[', 
-			GROUP_CONCAT(
-				DISTINCT CONCAT('{"id": "', cl.clan_id, '", "name": "', cl.clan, '"}') 
-				ORDER BY cl.clan 
-				SEPARATOR ', '
-			),
-    		']'
-		) AS clans,
-		CONCAT(
-    		'[',
-    		GROUP_CONCAT(
-        		DISTINCT CONCAT('{"id": "', k.kekkeigenkai_id, '", "name": "', k.kekkeigenkai, '"}')
-        		ORDER BY k.kekkeigenkai 
-        		SEPARATOR ', '
-   			),
-    		']'
-		) AS kekkeigenkais
+            '[',
+            GROUP_CONCAT(
+                DISTINCT CONCAT('"',ixc.image,'"')
+                SEPARATOR ', '
+            ),
+            ']'
+        ) AS images,
+        CONCAT(
+            '[',
+            GROUP_CONCAT(
+                DISTINCT CONCAT('{"id": "', v.village_id, '", "name": "', v.village, '"}')
+                ORDER BY v.village 
+                SEPARATOR ', '
+            ),
+            ']'
+        ) AS villages,
+        CONCAT(
+            '[', 
+            GROUP_CONCAT(
+                DISTINCT CONCAT('{"id": "', cl.clan_id, '", "name": "', cl.clan, '"}') 
+                ORDER BY cl.clan 
+                SEPARATOR ', '
+            ),
+            ']'
+        ) AS clans,
+        CONCAT(
+            '[',
+            GROUP_CONCAT(
+                DISTINCT CONCAT('{"id": "', k.kekkeigenkai_id, '", "name": "', k.kekkeigenkai, '"}')
+                ORDER BY k.kekkeigenkai 
+                SEPARATOR ', '
+            ),
+            ']'
+        ) AS kekkeigenkais
     FROM 
         characters c
     LEFT JOIN village_x_character vxc ON c.character_id = vxc.character_id
@@ -99,7 +114,8 @@ CREATE OR REPLACE VIEW view_characters AS
     LEFT JOIN clans cl ON cxc.clan_id = cl.clan_id
     LEFT JOIN kekkeigenkai_x_character kxc ON c.character_id = kxc.character_id
     LEFT JOIN kekkeigenkais k ON kxc.kekkeigenkai_id = k.kekkeigenkai_id
+    LEFT JOIN image_x_character ixc ON c.character_id = ixc.character_id
     GROUP BY
-        c.character_id, c.name, c.image
+        c.character_id, c.name
     ORDER BY
         c.character_id;

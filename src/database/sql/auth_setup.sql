@@ -9,9 +9,15 @@ CREATE TABLE users (
 );
 
 CREATE TABLE roles (
-    rol_id int UNSIGNED PRIMARY KEY,
+    rol_id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     rol varchar(50)
 );
+
+INSERT INTO roles (rol_id, rol) VALUES
+  (0, "user"),
+  (0, "moderator"), 
+  (0, "admin"),
+  (0, "superAdmin");
 
 CREATE TABLE rol_x_user (
     rxu_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
