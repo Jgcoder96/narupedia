@@ -5,6 +5,8 @@ import { createQueryOfClanXCharacter } from './createQueryOfClanXCharacter.helpe
 import { createQueryOfKekkeigenkai } from './createQueryOfKekkeigenkai.helper';
 import { createQueryOfKekkeigenkaiXCharacters } from './createQueryOfKekkeigenkaiXCharacter.helper';
 import { createQueryOfCharacters } from './createQueryOfCharacters.helper';
+import { queryInitialSetup } from './QueryInitialSetup.helper';
+import { QueryAuthSetup } from './QueryAuthSetup.helper';
 
 export const methods = {
   createQueryOfVillages,
@@ -14,4 +16,6 @@ export const methods = {
   createQueryOfKekkeigenkai,
   createQueryOfKekkeigenkaiXCharacters,
   createQueryOfCharacters,
+  queryInitialSetup,
+  QueryAuthSetup,
 };

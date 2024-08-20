@@ -1,38 +1,30 @@
-CREATE DATABASE IF NOT EXISTS narupedia;
-DROP DATABASE narupedia;
-
-USE narupedia;
-
-CREATE TABLE villages (
+export const queryInitialSetup = [
+  `USE narupedia;`,
+  `CREATE TABLE villages (
     village_id int UNSIGNED PRIMARY KEY, 
     village varchar(50)
-);
-
-CREATE TABLE clans (
+  );`,
+  `CREATE TABLE clans (
     clan_id int UNSIGNED PRIMARY KEY, 
     clan varchar(50)
-);
-
-CREATE TABLE kekkeigenkais (
+  );`,
+  `CREATE TABLE kekkeigenkais (
     kekkeigenkai_id int UNSIGNED PRIMARY KEY, 
     kekkeigenkai varchar(50)
-);
-
-CREATE TABLE characters (
+  );`,
+  `CREATE TABLE characters (
     character_id int UNSIGNED PRIMARY KEY, 
     name varchar(50) 
-);
-
-CREATE TABLE image_x_character (
+  );`,
+  `CREATE TABLE image_x_character (
     ixc_id int UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
     image varchar(200), 
     character_id int UNSIGNED,
     FOREIGN KEY (character_id) REFERENCES characters(character_id)
         ON DELETE SET NULL 
         ON UPDATE CASCADE
-    );
-
-CREATE TABLE village_x_character (
+    );`,
+  `CREATE TABLE village_x_character (
     vxc_id int UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
     village_id int UNSIGNED, 
     character_id int UNSIGNED,
@@ -42,9 +34,8 @@ CREATE TABLE village_x_character (
     FOREIGN KEY (character_id) REFERENCES characters(character_id)
         ON DELETE SET NULL 
         ON UPDATE CASCADE
-);
-
-CREATE TABLE clan_x_character (
+    );`,
+  `CREATE TABLE clan_x_character (
     cxc_id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     clan_id int UNSIGNED,
     character_id int UNSIGNED,
@@ -54,9 +45,8 @@ CREATE TABLE clan_x_character (
     FOREIGN KEY (character_id) REFERENCES characters(character_id) 
         ON DELETE SET NULL 
         ON UPDATE CASCADE
-);
-
-CREATE TABLE kekkeigenkai_x_character (
+    );`,
+  `CREATE TABLE kekkeigenkai_x_character (
     kxc_id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     kekkeigenkai_id int UNSIGNED,
     character_id int UNSIGNED,
@@ -66,9 +56,8 @@ CREATE TABLE kekkeigenkai_x_character (
     FOREIGN KEY (character_id) REFERENCES characters(character_id)
         ON DELETE SET NULL 
         ON UPDATE CASCADE
-);
-
-CREATE OR REPLACE VIEW view_characters AS 
+    );`,
+  `CREATE OR REPLACE VIEW view_characters AS 
     SELECT 
         c.character_id,
         c.name,
@@ -119,4 +108,5 @@ CREATE OR REPLACE VIEW view_characters AS
     GROUP BY
         c.character_id, c.name
     ORDER BY
-        c.character_id;
+        c.character_id;`,
+];

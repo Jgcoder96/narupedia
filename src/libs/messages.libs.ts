@@ -13,6 +13,8 @@ export const MESSAGES = {
   server: {
     serverError: 'Internal server error ',
     secretWordNotExist: 'Secret word not exist',
+    pageLessThanZero: 'The page must be greater than zero',
+    limitLessThanZero: 'The limit must be greater than zero',
   },
   database: {
     notFoundRecords: 'Not found records',

@@ -8,9 +8,20 @@ export const getAllCharacter = async (req: Request, res: Response) => {
     queryLimit = req.query.limit;
   try {
     if (queryPage && queryLimit) {
-      const page = parseInt(JSON.stringify(queryPage).slice(1, -1)),
-        limit = parseInt(JSON.stringify(queryLimit).slice(1, -1)),
-        offset = (page - 1) * limit;
+      const page = Number(queryPage),
+        limit = Number(queryLimit);
+      if (page <= 0) {
+        return res
+          .status(400)
+          .json({ error: MESSAGES.server.pageLessThanZero });
+      }
+      if (limit <= 0) {
+        return res
+          .status(400)
+          .json({ error: MESSAGES.server.limitLessThanZero });
+      }
+
+      const offset = (page - 1) * limit;
 
       const result = await SERVICES.readAllCharacterWithPage(offset, limit);
 

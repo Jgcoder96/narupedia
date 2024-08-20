@@ -12,10 +12,12 @@
   "license": "ISC",
   "scripts": {
     "dev": "ts-node-dev ./src/index.ts",
-    "tsc": "tsc",
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/index.js",
     "lint": "eslint \"*/**/.{js,ts,tsx}\" --quiet --fix",
-    "createDatabase": "ts-node-dev ./src/database/script/queries/createDatabase.querie.ts",
-    "prueba": "ts-node-dev ./src/database/script/data/createDataByCharacters.data.ts"
+    "createInitialSetup": "ts-node-dev ./src/database/script/queries/createInitialSetup.querie.ts",
+    "createAuthSetup": "ts-node-dev ./src/database/script/queries/createAuthSetup.querie.ts",
+    "createDatabase": "ts-node-dev ./src/database/script/queries/createDatabase.querie.ts"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
@@ -39,6 +41,7 @@
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "mysql2": "^3.6.5",
+    "rimraf": "^6.0.1",
     "zod": "^3.22.4"
   }
 }

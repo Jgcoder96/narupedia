@@ -3,13 +3,13 @@ import { SERVICES } from '../services/services';
 import { UTILS } from '../utils/utils';
 
 export const signUp = async (req: Request, res: Response) => {
-  const { username, email, password, rol } = req.body;
+  const { username, email, password } = req.body;
   const passwordEncryptt = await UTILS.encryptPassword(password);
   const creationResult = await SERVICES.signUp(
     username,
     email,
     passwordEncryptt,
-    rol,
+    'user',
   );
 
   if (!creationResult.procced) {
