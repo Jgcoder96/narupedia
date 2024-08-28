@@ -16,7 +16,6 @@ export const verifyRol = async (
     let role;
     if (UserId) user = await findUserById(UserId);
     if (user) role = user[0][0].roles;
-    console.log(role);
 
     if (method === METHODS.get && LICENSE.GET.includes(role)) next();
     else if (method === METHODS.post && LICENSE.POST.includes(role)) next();
