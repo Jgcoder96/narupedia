@@ -1,6 +1,6 @@
-import { Clans } from '../../../../apis/getClansByNarutodbTypes.api';
+import { Clans } from '../../../../../apis/getClansByNarutodbTypes.api';
 import { Character } from '../createDataByCharactersTypes.data';
-import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex.util';
+import { mapAndFindIndex } from '../../../../../utils/mapAndFindIndex.util';
 
 export const addClansToCharactersData = (data: Clans, record: Character[]) => {
   data.clans.map((clan) => {

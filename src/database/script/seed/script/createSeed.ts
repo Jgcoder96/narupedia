@@ -1,7 +1,7 @@
-import { pool } from '../connection/pool';
-import { methods } from './helpers/methods.helper';
+import { pool } from '../../connection/pool';
+import { methods } from '../helpers/methods.helper';
 
-const createDatabase = async () => {
+const createSeed = async () => {
   try {
     console.log('starting process');
 
@@ -26,7 +26,7 @@ const createDatabase = async () => {
       await pool.query(clanXCharacter),
       await pool.query(kekkeigenkaiXCharacter),
     ]);
-    await pool.end();
+    pool.end();
     console.log('The data has been successfully inserted into the database');
     console.log('finished process');
   } catch (error) {
@@ -34,4 +34,4 @@ const createDatabase = async () => {
   }
 };
 
-createDatabase();
+createSeed();

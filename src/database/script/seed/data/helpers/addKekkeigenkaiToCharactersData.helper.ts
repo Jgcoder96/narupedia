@@ -1,6 +1,6 @@
-import { Kekkeigenkai } from '../../../../apis/getKekkeigenkaiByNarutodbTypes.api';
+import { Kekkeigenkai } from '../../../../../apis/getKekkeigenkaiByNarutodbTypes.api';
 import { Character } from '../createDataByCharactersTypes.data';
-import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex.util';
+import { mapAndFindIndex } from '../../../../../utils/mapAndFindIndex.util';
 
 export const addKekkeigenkaiToCharactersData = (
   data: Kekkeigenkai,

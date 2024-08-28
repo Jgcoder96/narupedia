@@ -1,4 +1,4 @@
-import { methods } from '../../data/methods.data';
+import { methods } from '../data/methods.data';
 
 export const createQueryOfKekkeigenkaiXCharacters = async () => {
   const dataCharacters = await methods.createDataByCharacters();

@@ -1,4 +1,4 @@
-import { methods } from '../../../apis/methods.api';
+import { methods } from '../../../../apis/methods.api';
 import { Clan } from './createDataByClansTypes.data';
 
 export const createDataByClans = async () => {

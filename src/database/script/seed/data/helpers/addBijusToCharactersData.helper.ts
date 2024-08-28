@@ -1,6 +1,6 @@
-import { Bijus } from '../../../../apis/getBijusByNarutodbTypes.api';
+import { Bijus } from '../../../../../apis/getBijusByNarutodbTypes.api';
 import { Character } from '../createDataByCharactersTypes.data';
-import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex.util';
+import { mapAndFindIndex } from '../../../../../utils/mapAndFindIndex.util';
 
 export const addBijusToCharactersData = (data: Bijus, record: Character[]) => {
   data.tailedBeasts.map((biju) => {

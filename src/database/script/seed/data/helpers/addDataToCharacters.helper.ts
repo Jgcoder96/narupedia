@@ -1,4 +1,4 @@
-import { Characters } from '../../../../apis/getCharactersByNarutodbTypes.api';
+import { Characters } from '../../../../../apis/getCharactersByNarutodbTypes.api';
 import { Character } from '../createDataByCharactersTypes.data';
 
 export const addDataToCharacters = (data: Characters, record: Character[]) => {

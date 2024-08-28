@@ -1,4 +1,4 @@
-import { methods } from '../../../apis/methods.api';
+import { methods } from '../../../../apis/methods.api';
 import { Kekkeigenkai } from './createDataByKekkeigenkaiTypes.data';
 
 export const createDataByKekkeigenkai = async () => {

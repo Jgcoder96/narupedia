@@ -1,10 +1,10 @@
 import { pool } from '../connection/pool';
-import { methods } from './helpers/methods.helper';
+import { QueryAuthSetup } from './queries/QueryAuthSetup.querie';
 
 export const createAuthSetup = async () => {
   try {
     console.log('starting process');
-    const queries = methods.QueryAuthSetup;
+    const queries = QueryAuthSetup;
     await Promise.all([
       await pool.query(queries[0]),
       await pool.query(queries[1]),
@@ -17,6 +17,7 @@ export const createAuthSetup = async () => {
       await pool.query(queries[8]),
       await pool.query(queries[9]),
     ]);
+    pool.end();
     console.log('finished process');
   } catch (error) {
     console.log(error);

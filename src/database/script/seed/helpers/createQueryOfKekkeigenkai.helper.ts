@@ -1,4 +1,4 @@
-import { methods } from '../../data/methods.data';
+import { methods } from '../data/methods.data';
 
 export const createQueryOfKekkeigenkai = async () => {
   const data = await methods.createDataByKekkeigenkai();

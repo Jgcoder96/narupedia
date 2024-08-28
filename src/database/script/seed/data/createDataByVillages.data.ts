@@ -1,4 +1,4 @@
-import { methods } from '../../../apis/methods.api';
+import { methods } from '../../../../apis/methods.api';
 import { Village } from './createDataByVillagesTypes.data';
 
 export const createDataByVillages = async () => {

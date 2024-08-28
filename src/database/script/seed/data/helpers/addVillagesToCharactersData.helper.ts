@@ -1,6 +1,6 @@
-import { Villages } from '../../../../apis/getVillagesByNarutodbTypes.api';
+import { Villages } from '../../../../../apis/getVillagesByNarutodbTypes.api';
 import { Character } from '../createDataByCharactersTypes.data';
-import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex.util';
+import { mapAndFindIndex } from '../../../../../utils/mapAndFindIndex.util';
 
 export const addVillagesToCharactersData = (
   data: Villages,

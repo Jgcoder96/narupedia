@@ -1,6 +1,6 @@
-import { Akatsukis } from '../../../../apis/getAkatsukiByNarutodbTypes.api';
+import { Akatsukis } from '../../../../../apis/getAkatsukiByNarutodbTypes.api';
 import { Character } from '../createDataByCharactersTypes.data';
-import { mapAndFindIndex } from '../../../../utils/mapAndFindIndex.util';
+import { mapAndFindIndex } from '../../../../../utils/mapAndFindIndex.util';
 
 export const addAkatsukisToCharactersData = (
   data: Akatsukis,

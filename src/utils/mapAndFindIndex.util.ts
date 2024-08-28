@@ -1,4 +1,4 @@
-import { Character } from '../database/script/data/createDataByCharactersTypes.data';
+import { Character } from '../database/script/seed/data/createDataByCharactersTypes.data';
 
 export const mapAndFindIndex = (
   array: Character[],

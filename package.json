@@ -15,9 +15,10 @@
     "build": "rimraf ./build && tsc",
     "start": "npm run build && node build/index.js",
     "lint": "eslint \"*/**/.{js,ts,tsx}\" --quiet --fix",
-    "createInitialSetup": "ts-node-dev ./src/database/script/queries/createInitialSetup.querie.ts",
-    "createAuthSetup": "ts-node-dev ./src/database/script/queries/createAuthSetup.querie.ts",
-    "createDatabase": "ts-node-dev ./src/database/script/queries/createDatabase.querie.ts"
+    "initialSetup": "ts-node-dev ./src/database/script/structure/createInitialSetup.ts",
+    "createSeed": "ts-node-dev ./src/database/script/seed/script/createSeed.ts",
+    "authSetup": "ts-node-dev ./src/database/script/structure/createAuthSetup.ts",
+    "createAdmin": "ts-node-dev ./src/modules/auth/utils/createAdmin.ts"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",

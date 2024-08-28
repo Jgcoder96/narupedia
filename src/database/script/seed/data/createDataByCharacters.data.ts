@@ -1,5 +1,6 @@
-import { methods } from '../../../apis/methods.api';
+import { methods } from '../../../../apis/methods.api';
 import { Character } from './createDataByCharactersTypes.data';
+
 import { addDataToCharacters } from './helpers/addDataToCharacters.helper';
 import { addClansToCharactersData } from './helpers/addClansToCharactersData.helper';
 import { addKekkeigenkaiToCharactersData } from './helpers/addKekkeigenkaiToCharactersData.helper';
