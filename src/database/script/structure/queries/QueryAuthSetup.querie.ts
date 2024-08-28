@@ -66,8 +66,8 @@ GROUP BY
 ORDER BY
     u.user_id;`,
   `INSERT INTO roles (rol_id, rol) VALUES
-    (0, "user"),
-    (0, "admin");`,
+    (0, "USER"),
+    (0, "ADMIN");`,
   `INSERT INTO methods (method_id, method) VALUES 
     (0, "POST"),
     (0, "GET"),

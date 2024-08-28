@@ -16,7 +16,7 @@ export const createAdmin = async (
   const passwordEncrypt = await UTILS.encryptPassword(password);
   await MODELS.insertUser(username, email, passwordEncrypt);
   const user = await MODELS.findUserByUsername(username),
-    existRol = await MODELS.findRoleByName('admin');
+    existRol = await MODELS.findRoleByName('ADMIN');
 
   const rol = existRol[0][0].rol_id;
   const userId = user[0][0].user_id;

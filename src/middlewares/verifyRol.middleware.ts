@@ -15,16 +15,19 @@ export const verifyRol = async (
     let user;
     let role;
     if (UserId) user = await findUserById(UserId);
-    if (user) role = user[0][0].rol;
+    if (user) role = user[0][0].roles;
+    console.log(role);
 
     if (method === METHODS.get && LICENSE.GET.includes(role)) next();
     else if (method === METHODS.post && LICENSE.POST.includes(role)) next();
     else if (method === METHODS.put && LICENSE.PUT.includes(role)) next();
     else if (method === METHODS.delete && LICENSE.DELETE.includes(role)) next();
-    else
+    else {
+      console.log('hola');
       return res
         .status(401)
         .json({ res: false, message: MESSAGES.auth.unauthorized });
+    }
   } catch (error) {
     return res
       .status(401)

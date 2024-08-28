@@ -9,7 +9,7 @@ export const signUp = async (req: Request, res: Response) => {
     username,
     email,
     passwordEncryptt,
-    'user',
+    'USER',
   );
 
   if (!creationResult.procced) {
