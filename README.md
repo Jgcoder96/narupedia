@@ -1,4 +1,16 @@
 # NARUAPI
+
+## Project installation
+
+- execute `npm install`
+- create file **.env** with the environment variables of **.env.template**
+- create database with name **narupedia**
+- script
+  - create database structure `npm run initialSetup`
+  - insert seed into database `npm run createSeed`
+  - create auth structure `npm run authSetup`
+  - create admin to database `npm run createAdmin`
+
 ## Functions enabled for **USERS**
 
 ### SignUp
