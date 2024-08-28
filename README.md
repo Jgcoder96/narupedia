@@ -11,6 +11,8 @@
   - create auth structure `npm run authSetup`
   - create admin to database `npm run createAdmin`
 
+To use the endpoints you need to authenticate with a JWT, you can use the SignUp and SignIn endpoint
+
 ## Functions enabled for **USERS**
 
 ### SignUp
