@@ -18,7 +18,8 @@
     "initialSetup": "ts-node-dev ./src/database/script/structure/createInitialSetup.ts",
     "createSeed": "ts-node-dev ./src/database/script/seed/script/createSeed.ts",
     "authSetup": "ts-node-dev ./src/database/script/structure/createAuthSetup.ts",
-    "createAdmin": "ts-node-dev ./src/modules/auth/utils/createAdmin.ts"
+    "createAdmin": "ts-node-dev ./src/modules/auth/utils/createAdmin.ts",
+    "prueba": "ts-node-dev ./src/utils/getMethodsAndRoles.ts"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",

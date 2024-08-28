@@ -16,6 +16,7 @@ export const createAuthSetup = async () => {
       await pool.query(queries[7]),
       await pool.query(queries[8]),
       await pool.query(queries[9]),
+      await pool.query(queries[10]),
     ]);
     pool.end();
     console.log('finished process');

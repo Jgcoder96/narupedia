@@ -79,4 +79,16 @@ ORDER BY
     (0, 2, 2),
     (0, 3, 2),
     (0, 4, 2);`,
+  `CREATE VIEW methods_by_roles AS
+      SELECT 
+        m.method_id,
+        m.method,
+        r.rol_id,
+        r.rol
+      FROM 
+        methods m
+      JOIN 
+        method_x_rol mxr ON m.method_id = mxr.method_id
+      JOIN 
+        roles r ON mxr.rol_id = r.rol_id;`,
 ];
