@@ -6,7 +6,6 @@ const connection = mysql.createConnection({
   database: config.database,
   user: config.user,
   password: config.password,
-  port: Number(config.port),
 });
 
 export const getConnection = async () => {
