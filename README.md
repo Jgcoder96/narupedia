@@ -1,6 +1,7 @@
 # NARUAPI
+## Functions enabled for **USERS**
 
-## SignUp
+### SignUp
 
 `POST` http://localhost:4000/api/auth/signup
 
@@ -16,7 +17,7 @@ Content-Type: application/json
 	"password": string
 }`
 
-## SignIn
+### SignIn
 
 `POST` http://localhost:4000/api/auth/signup
 
@@ -31,7 +32,7 @@ Content-Type: application/json
 	"password": string
 }`
 
-## GET Characters
+### GET Characters
 
 Get all the characters
 
@@ -49,7 +50,7 @@ Get character
 
 x-access-token: token
 
-## GET Villages
+### GET Villages
 
 Get all the villages
 
@@ -63,7 +64,7 @@ Get village
 
 x-access-token: token
 
-## GET Clans
+### GET Clans
 
 Get all the clans
 
@@ -77,7 +78,7 @@ Get clan
 
 x-access-token: token
 
-## GET Kekkeigenkai
+### GET Kekkeigenkai
 
 Get all the kekkeigenkai
 
@@ -90,3 +91,204 @@ Get kekkeigenkai
 **Headers**
 
 x-access-token: token
+
+## Functions enabled for **ADMIN**
+
+### POST Characters
+
+`POST` http://localhost:4000/api/characters
+
+**Headers**
+
+x-access-token: token
+
+Content-Type: application/json
+
+**Body**
+
+`{
+	"character": string
+}`
+
+### PUT Characters
+
+`PUT` http://localhost:4000/api/characters
+
+**Headers**
+
+x-access-token: token
+
+Content-Type: application/json
+
+**Body**
+
+`{
+	"id": number, 
+	"character": string
+}`
+
+### DELETE Characters
+
+`DELETE` http://localhost:4000/api/characters
+
+**Headers**
+
+x-access-token: token
+
+Content-Type: application/json
+
+**Body**
+
+`{
+	"id": number
+}`
+
+### POST Village
+
+`POST` http://localhost:4000/api/villages
+
+**Headers**
+
+x-access-token: token
+
+Content-Type: application/json
+
+**Body**
+
+`{
+	"village": string
+}`
+
+### PUT village
+
+`PUT` http://localhost:4000/api/villages
+
+**Headers**
+
+x-access-token: token
+
+Content-Type: application/json
+
+**Body**
+
+`{
+	"id": number, 
+	"village": string
+}`
+
+### DELETE village
+
+`DELETE` http://localhost:4000/api/villages
+
+**Headers**
+
+x-access-token: token
+
+Content-Type: application/json
+
+**Body**
+
+`{
+	"id": number
+}`
+
+### POST Clan
+
+`POST` http://localhost:4000/api/clans
+
+**Headers**
+
+x-access-token: token
+
+Content-Type: application/json
+
+**Body**
+
+`{
+	"village": string
+}`
+
+### PUT clan
+
+`PUT` http://localhost:4000/api/clans
+
+**Headers**
+
+x-access-token: token
+
+Content-Type: application/json
+
+**Body**
+
+`{
+	"id": number, 
+	"clan": string
+}`
+
+### DELETE clan
+
+`DELETE` http://localhost:4000/api/clans
+
+**Headers**
+
+x-access-token: token
+
+Content-Type: application/json
+
+**Body**
+
+`{
+	"id": number
+}`
+
+### POST kekkeigenkai
+
+`POST` http://localhost:4000/api/kekkeigenkai
+
+**Headers**
+
+x-access-token: token
+
+Content-Type: application/json
+
+**Body**
+
+`{
+	"kekkeigenkai": string
+}`
+
+### PUT kekkeigenkai
+
+`PUT` http://localhost:4000/api/kekkeigenkai
+
+**Headers**
+
+x-access-token: token
+
+Content-Type: application/json
+
+**Body**
+
+`{
+	"id": number, 
+	"kekkeigenkai": string
+}`
+
+### DELETE clan
+
+`DELETE` http://localhost:4000/api/kekkeigenkai
+
+**Headers**
+
+x-access-token: token
+
+Content-Type: application/json
+
+**Body**
+
+`{
+	"id": number
+}`
+
+
+
