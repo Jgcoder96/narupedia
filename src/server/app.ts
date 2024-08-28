@@ -8,7 +8,7 @@ import { routerAuth } from '../modules/auth/routes/routes';
 
 export const app = express();
 
-app.set('port', 8080);
+app.set('port', 4000);
 app.use(express.json());
 app.use(morgan('dev'));
 
